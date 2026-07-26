@@ -31,13 +31,11 @@ async function clickCurrentBooking(page, browserManager) {
       }
 
       try {
-        await browserManager.screenshot("14-booking-choice-modal.png").catch(() => null);
         await locator.scrollIntoViewIfNeeded().catch(() => null);
         await page.waitForTimeout(200);
         await locator.click({ timeout: 5000, force: true });
         await page.waitForTimeout(2000);
         logger.success("✓ Clicked Current Booking");
-        await browserManager.screenshot("15-after-current-booking-click.png").catch(() => null);
         return true;
       } catch (e) {
         logger.warn(`Current Booking click failed (locator ${i}): ${e.message}`);
@@ -57,7 +55,6 @@ async function clickCurrentBooking(page, browserManager) {
     if (domClicked) {
       await page.waitForTimeout(2000);
       logger.success("✓ Clicked Current Booking (DOM fallback)");
-      await browserManager.screenshot("15-after-current-booking-click.png").catch(() => null);
       return true;
     }
 
@@ -65,7 +62,6 @@ async function clickCurrentBooking(page, browserManager) {
   }
 
   logger.warn("⚠️ Could not auto-click Current Booking, switching to manual continuation.");
-  await browserManager.screenshot("15-current-booking-manual-needed.png").catch(() => null);
   return false;
 }
 
@@ -83,7 +79,6 @@ async function completeDonationConfirmForm(page, browserManager) {
   }
 
   await page.waitForTimeout(1500);
-  await browserManager.screenshot("11-donation-confirm-screen.png");
 
   const amountValue = "30000";
   const amountCandidates = [
@@ -144,8 +139,6 @@ async function completeDonationConfirmForm(page, browserManager) {
   }
   logger.success("✓ Both declaration checkboxes checked");
 
-  await browserManager.screenshot("12-donation-form-filled.png");
-
   const continueCandidates = [
     page.locator('button:has-text("Continue")').first(),
     page.locator('button[ng-click*="continue" i]').first(),
@@ -186,7 +179,6 @@ async function completeDonationConfirmForm(page, browserManager) {
     logger.success("✓ Donation form Continue clicked");
   }
 
-  await browserManager.screenshot("13-after-donation-continue.png");
   const currentBookingClicked = await clickCurrentBooking(page, browserManager);
   if (!currentBookingClicked) {
     await waitForEnter(
@@ -235,7 +227,6 @@ async function clickContinueToDonate(page, browserManager) {
         logger.success("✓ Clicked Continue to Donate");
       }
 
-      await browserManager.screenshot("10-after-continue-to-donate.png");
       clicked = true;
       break;
     } catch (e) {
@@ -254,7 +245,6 @@ async function clickContinueToDonate(page, browserManager) {
 async function clickSrivaniTrustDonations(page, browserManager) {
   logger.section("Post-Login Step: Open Srivani Trust Donations");
   await page.waitForTimeout(2000);
-  await browserManager.screenshot("08-welcome-page.png");
 
   const urlBeforeClick = page.url();
 
@@ -300,7 +290,6 @@ async function clickSrivaniTrustDonations(page, browserManager) {
 
       if (await didNavigateToSrivani()) {
         logger.success("✓ Clicked Srivani Trust Donations and navigation confirmed");
-        await browserManager.screenshot("09-srivani-donation-opened.png");
         await clickContinueToDonate(page, browserManager);
         return true;
       }
@@ -328,7 +317,6 @@ async function clickSrivaniTrustDonations(page, browserManager) {
     await page.waitForTimeout(2500);
     if (await didNavigateToSrivani()) {
       logger.success("✓ DOM fallback click worked; reached Srivani donations screen");
-      await browserManager.screenshot("09-srivani-donation-opened.png");
       await clickContinueToDonate(page, browserManager);
       return true;
     }
@@ -339,7 +327,6 @@ async function clickSrivaniTrustDonations(page, browserManager) {
   await page.waitForTimeout(2000);
   if (await didNavigateToSrivani()) {
     logger.success("✓ Reached Srivani donations screen via direct URL fallback");
-    await browserManager.screenshot("09-srivani-donation-opened.png");
     await clickContinueToDonate(page, browserManager);
     return true;
   }
@@ -386,7 +373,6 @@ async function runLoginFlow() {
     }
 
     logger.success("Login form loaded successfully");
-    await browserManager.screenshot("01-login-form-ready.png");
 
      // Step 2: Skip approval - auto-proceed with form fill
      logger.info("Auto-proceeding with form fill (credentials available in config)");
@@ -402,7 +388,6 @@ async function runLoginFlow() {
 
     await usernameField.fill(config.username);
     logger.success(`Username filled: ${config.username}`);
-    await browserManager.screenshot("02-username-filled.png");
 
     // Step 4: Fill password
     logger.info("Filling password field...");
@@ -415,7 +400,6 @@ async function runLoginFlow() {
 
     await passwordField.fill(config.password);
     logger.success("Password filled (not shown for security)");
-    await browserManager.screenshot("03-password-filled.png");
 
      // Step 5: Handle CAPTCHA (manual entry + manual submit)
     logger.info("Checking for CAPTCHA...");
@@ -427,7 +411,6 @@ async function runLoginFlow() {
 
     if (captchaField) {
       logger.warn("CAPTCHA field detected!");
-      await browserManager.screenshot("04-captcha-visible.png");
       logger.warn("Please enter CAPTCHA in browser and click Login manually.");
 
       const loginUrl = page.url();
@@ -451,7 +434,6 @@ async function runLoginFlow() {
       }
 
       logger.success("✓ Manual CAPTCHA login submitted and navigation detected");
-      await browserManager.screenshot("06-login-submitted.png");
     } else {
       logger.info("No CAPTCHA field detected on this page");
 
@@ -495,7 +477,6 @@ async function runLoginFlow() {
 
       await loginButton.click();
       logger.info("Login button clicked, waiting for authentication...");
-      await browserManager.screenshot("06-login-submitted.png");
 
       logger.info("Waiting for authentication to complete...");
       try {
@@ -509,7 +490,6 @@ async function runLoginFlow() {
 
     // Wait for dashboard or error message
     await page.waitForTimeout(3000);
-    await browserManager.screenshot("07-after-login.png");
 
     // Check if login was successful
     const dashboardContent = await page.$(".dashboard, [ng-controller*='Dashboard'], .home-content");
@@ -526,7 +506,6 @@ async function runLoginFlow() {
     }
   } catch (error) {
     logger.error(`Login flow failed: ${error.message}`);
-    await browserManager.takeErrorScreenshot("login-error");
     printError(error.message);
     throw error;
   } finally {
