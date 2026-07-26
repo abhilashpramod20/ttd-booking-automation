@@ -1,0 +1,153 @@
+
+> ttd-booking-automation@1.0.0 full-flow
+> node scripts/full-flow.js
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TTD COMPLETE AUTOMATION FLOW
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[2026-07-26T09:16:03.488Z] [INFO] Login + Donation + Booking (automated with interactive fallbacks)
+[2026-07-26T09:16:03.489Z] [INFO] Browser will remain ACTIVE after automation for manual continuation
+
+[2026-07-26T09:16:03.489Z] [INFO] Launching browser...
+[2026-07-26T09:16:04.245Z] [SUCCESS] Browser launched successfully
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  PHASE 1: LOGIN WITH AUTOMATIC CAPTCHA OCR
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[2026-07-26T09:16:04.245Z] [INFO] Navigating to login page...
+[2026-07-26T09:16:04.245Z] [INFO] Navigating to: https://tirupatibalaji.ap.gov.in/#/userLogin
+[2026-07-26T09:16:06.052Z] [SUCCESS] Successfully navigated to https://tirupatibalaji.ap.gov.in/#/userLogin
+[2026-07-26T09:16:06.053Z] [INFO] Waiting for login form to load...
+[2026-07-26T09:16:06.879Z] [INFO] Found login form using selector: [name="uName"]
+[2026-07-26T09:16:06.879Z] [SUCCESS] Login form loaded successfully
+[2026-07-26T09:16:06.979Z] [INFO] Screenshot saved: screenshots/01-login-form-ready.png
+[2026-07-26T09:16:06.980Z] [INFO] Filling username field...
+[2026-07-26T09:16:06.985Z] [SUCCESS] Username filled: abhilash.pramod@yahoo.com
+[2026-07-26T09:16:07.053Z] [INFO] Screenshot saved: screenshots/02-username-filled.png
+[2026-07-26T09:16:07.053Z] [INFO] Filling password field...
+[2026-07-26T09:16:07.057Z] [SUCCESS] Password filled (not shown for security)
+[2026-07-26T09:16:07.120Z] [INFO] Screenshot saved: screenshots/03-password-filled.png
+[2026-07-26T09:16:07.120Z] [INFO] Checking for CAPTCHA...
+[2026-07-26T09:16:08.129Z] [WARN] CAPTCHA field detected!
+[2026-07-26T09:16:08.219Z] [INFO] Screenshot saved: screenshots/04-captcha-visible.png
+[2026-07-26T09:16:08.219Z] [INFO] Running automatic OCR CAPTCHA recognition...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  CAPTCHA Recognition
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[2026-07-26T09:16:08.220Z] [INFO] Starting OCR CAPTCHA recognition...
+[2026-07-26T09:16:08.220Z] [INFO] Extracting CAPTCHA image element...
+[2026-07-26T09:16:08.227Z] [INFO] CAPTCHA image extracted and saved: screenshots/captcha-1785057368226.png
+[2026-07-26T09:16:08.227Z] [INFO] Running OCR on: screenshots/captcha-1785057368226.png
+[2026-07-26T09:16:08.360Z] [INFO] OCR recognized CAPTCHA: SVC74KN
+[2026-07-26T09:16:08.360Z] [SUCCESS] ✓ CAPTCHA recognized via OCR: SVC74KN
+[2026-07-26T09:16:08.360Z] [INFO] Filling CAPTCHA code: SVC74KN
+[2026-07-26T09:16:08.364Z] [SUCCESS] ✓ CAPTCHA code entered successfully
+[2026-07-26T09:16:08.427Z] [INFO] Screenshot saved: screenshots/05-captcha-filled.png
+[2026-07-26T09:16:08.427Z] [WARN] ⚠️  CAPTCHA visible - you may need to click the Login button manually
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  CAPTCHA is visible in the browser. Please solve it if not already done, then click the 'Login' button manually. After clicking Login, type 'continue' here to proceed.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Hint: Enter: continue
+[1G[0JEnter value: [14Gcontinue
+[2026-07-26T09:16:23.160Z] [SUCCESS] ✓ Entered: CONTINUE
+[2026-07-26T09:16:23.161Z] [SUCCESS] ✓ [2026-07-26T09:16:23.161Z] DECISION: Login Click | Options=[manual] | Selected=clicked
+[2026-07-26T09:16:23.161Z] DECISION: Login Click | Options=[manual] | Selected=clicked
+[2026-07-26T09:16:23.161Z] [INFO] 📋 [2026-07-26T09:16:23.161Z] ACTION: Waiting for manual Login button click | reason=CAPTCHA requires manual interaction
+[2026-07-26T09:16:23.161Z] ACTION: Waiting for manual Login button click | reason=CAPTCHA requires manual interaction
+[2026-07-26T09:16:23.162Z] [INFO] Waiting for authentication after manual Login click...
+skip
+proceed
+exit
+[2026-07-26T09:16:40.274Z] [INFO] Screenshot saved: screenshots/06-after-login-attempt.png
+[2026-07-26T09:16:40.275Z] [SUCCESS] ✓ Login process completed!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  VERIFYING LOGIN SUCCESS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[2026-07-26T09:16:40.275Z] [INFO] Current URL after login: https://tirupatibalaji.ap.gov.in/#/userLogin
+[2026-07-26T09:16:40.357Z] [INFO] Screenshot saved: screenshots/07-after-login.png
+[2026-07-26T09:16:40.357Z] [ERROR] ❌ LOGIN FAILED - Still on login page!
+[2026-07-26T09:16:40.357Z] [ERROR] CAPTCHA may have been incorrect or credentials invalid
+[2026-07-26T09:16:40.358Z] [ERROR] ❌ [2026-07-26T09:16:40.358Z] ERROR: Login verification failed | currentUrl=https://tirupatibalaji.ap.gov.in/#/userLogin
+[2026-07-26T09:16:40.358Z] ERROR: Login verification failed | currentUrl=https://tirupatibalaji.ap.gov.in/#/userLogin
+[2026-07-26T09:16:40.358Z] [ERROR] ❌ Login verification failed!
+[2026-07-26T09:16:40.358Z] [WARN] Current URL: https://tirupatibalaji.ap.gov.in/#/userLogin
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Login failed. Type 'manual' to handle manually, or 'skip' to skip to donation page
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Hint: Enter: manual or skip
+
+✗ Error reading input: Readline interface is not available
+[2026-07-26T09:16:40.358Z] [ERROR] Full flow failed: Readline interface is not available
+[2026-07-26T09:16:40.358Z] [ERROR] ❌ [2026-07-26T09:16:40.358Z] ERROR: Full flow execution failed | error=Readline interface is not available
+[2026-07-26T09:16:40.358Z] ERROR: Full flow execution failed | error=Readline interface is not available
+[2026-07-26T09:16:40.437Z] [INFO] Screenshot saved: screenshots/error-full-flow-error-2026-07-26T09-16-40-358Z.png
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ⚠️  STEP ENCOUNTERED AN ISSUE - SWITCHING TO MANUAL MODE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[2026-07-26T09:16:40.437Z] [ERROR] Error: Readline interface is not available
+[2026-07-26T09:16:40.437Z] [INFO] 
+Automation encountered an issue and is switching to manual mode.
+[2026-07-26T09:16:40.438Z] [INFO] Browser is still ACTIVE - you can manually complete the current step.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ⚠️  STEP FAILED: Automation Step Recovery
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[2026-07-26T09:16:40.438Z] [WARN] The automation encountered an issue with: The automation encountered an error: Readline interface is not available. Please manually complete or fix the current step in the browser.
+[2026-07-26T09:16:40.438Z] [INFO] 
+What you can do:
+  1. Manually complete the step in the browser
+  2. Once done, come back here and press ENTER
+  3. Automation will continue to the NEXT STEP (not skip)
+[2026-07-26T09:16:40.438Z] [ERROR] ❌ [2026-07-26T09:16:40.438Z] ERROR: Step failed and paused for manual intervention | step=Automation Step Recovery | description=The automation encountered an error: Readline interface is not available. Please manually complete or fix the current step in the browser.
+[2026-07-26T09:16:40.438Z] ERROR: Step failed and paused for manual intervention | step=Automation Step Recovery | description=The automation encountered an error: Readline interface is not available. Please manually complete or fix the current step in the browser.
+[2026-07-26T09:16:40.503Z] [INFO] Screenshot saved: screenshots/manual-intervention-required-Automation-Step-Recovery.png
+[2026-07-26T09:16:40.503Z] [INFO] 📋 [2026-07-26T09:16:40.503Z] ACTION: Screenshot taken for step failure | step=Automation Step Recovery
+[2026-07-26T09:16:40.503Z] ACTION: Screenshot taken for step failure | step=Automation Step Recovery
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  After you've manually completed "Automation Step Recovery" in the browser, press ENTER to continue automation
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Hint: Press ENTER when "Automation Step Recovery" is complete
+
+✗ Error reading input: Readline interface is not available
+[2026-07-26T09:16:40.504Z] [ERROR] Recovery process failed: Readline interface is not available
+[2026-07-26T09:16:40.504Z] [ERROR] ❌ [2026-07-26T09:16:40.504Z] ERROR: Recovery process failed | error=Readline interface is not available
+[2026-07-26T09:16:40.504Z] ERROR: Recovery process failed | error=Readline interface is not available
+[2026-07-26T09:16:40.504Z] [INFO] runFullFlow completed. Browser remains OPEN for manual steps.
+[2026-07-26T09:16:40.504Z] [ERROR] Script execution failed: Readline interface is not available
+[2026-07-26T09:16:40.504Z] [ERROR] ❌ [2026-07-26T09:16:40.504Z] ERROR: Script execution failed | error=Readline interface is not available
+[2026-07-26T09:16:40.504Z] ERROR: Script execution failed | error=Readline interface is not available
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ⚠️  ERROR - BROWSER KEPT OPEN FOR MANUAL RECOVERY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[2026-07-26T09:16:40.504Z] [WARN] 
+Browser is still OPEN - you can manually complete the booking
+[2026-07-26T09:16:40.504Z] [WARN] After manual completion, close the browser to exit the script.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Press ENTER after you're done to close the browser and exit
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Hint: Press ENTER to exit
+
+✗ Error reading input: Readline interface is not available
+[2026-07-26T09:16:40.504Z] [SUCCESS] 
+✅ Script completed and browser closed. Thank you!

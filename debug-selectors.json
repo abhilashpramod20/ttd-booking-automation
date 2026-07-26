@@ -1,0 +1,240 @@
+{
+  "checkboxes": [],
+  "buttons": [
+    {
+      "index": 0,
+      "html": "<button type=\"button\" class=\"close\" id=\"\" data-dismiss=\"modal\">\n\t\t\t\t\t<!-- <img src=\"content/img/icon-close.png\"> -->\n\t\t\t\t</button>",
+      "text": "",
+      "id": "",
+      "class": "close",
+      "ng-click": null,
+      "ng-disabled": null
+    },
+    {
+      "index": 1,
+      "html": "<button class=\"btn btn-act\" style=\"padding-bottom:10px; margin-left:140px; margin-bottom:10px;\" ng-click=\"closeupdatedis()\" id=\"\">OK</button>",
+      "text": "OK",
+      "id": "",
+      "class": "btn btn-act",
+      "ng-click": "closeupdatedis()",
+      "ng-disabled": null
+    },
+    {
+      "index": 2,
+      "html": "<button class=\"btn btn-act ng-binding\" ng-click=\"bdc.closePopUp()\">Ok</button>",
+      "text": "Ok",
+      "id": "",
+      "class": "btn btn-act ng-binding",
+      "ng-click": "bdc.closePopUp()",
+      "ng-disabled": null
+    },
+    {
+      "index": 3,
+      "html": "<button class=\"btn btn-act\" ng-click=\"bdc.messageclosePopUp()\">\n\t\t\t\t\t\t\t\tOk\n\t\t\t\t\t\t\t</button>",
+      "text": "Ok",
+      "id": "",
+      "class": "btn btn-act",
+      "ng-click": "bdc.messageclosePopUp()",
+      "ng-disabled": null
+    },
+    {
+      "index": 4,
+      "html": "<button class=\"btn btn-act ng-binding\" ng-click=\"bdc.sevaDipPayNow()\"></button>",
+      "text": "",
+      "id": "",
+      "class": "btn btn-act ng-binding",
+      "ng-click": "bdc.sevaDipPayNow()",
+      "ng-disabled": null
+    },
+    {
+      "index": 5,
+      "html": "<button class=\"btn btn-act\" ng-click=\"bdc.darshanDipPayNow()\">Pay Now</button>",
+      "text": "Pay Now",
+      "id": "",
+      "class": "btn btn-act",
+      "ng-click": "bdc.darshanDipPayNow()",
+      "ng-disabled": null
+    },
+    {
+      "index": 6,
+      "html": "<button class=\"btn btn-act ng-binding\" ng-click=\"bdc.messagePopUpnext()\"></button>",
+      "text": "",
+      "id": "",
+      "class": "btn btn-act ng-binding",
+      "ng-click": "bdc.messagePopUpnext()",
+      "ng-disabled": null
+    },
+    {
+      "index": 7,
+      "html": "<button class=\"btn btn-act\" ng-click=\"bdc.donmessagePopUpnext()\">Proceed</button>",
+      "text": "Proceed",
+      "id": "",
+      "class": "btn btn-act",
+      "ng-click": "bdc.donmessagePopUpnext()",
+      "ng-disabled": null
+    },
+    {
+      "index": 8,
+      "html": "<button class=\"btn btn-clk\" ng-click=\"bdc.donmessagePopUpclose()\">Cancel</button>",
+      "text": "Cancel",
+      "id": "",
+      "class": "btn btn-clk",
+      "ng-click": "bdc.donmessagePopUpclose()",
+      "ng-disabled": null
+    },
+    {
+      "index": 9,
+      "html": "<button class=\"btn btn-act\" ng-click=\"bdc.donmessagePopUpclose()\">OK</button>",
+      "text": "OK",
+      "id": "",
+      "class": "btn btn-act",
+      "ng-click": "bdc.donmessagePopUpclose()",
+      "ng-disabled": null
+    },
+    {
+      "index": 10,
+      "html": "<button class=\"btn btn-act\" ng-click=\"bdc.ehumessagePopUpnext()\">Proceed</button>",
+      "text": "Proceed",
+      "id": "",
+      "class": "btn btn-act",
+      "ng-click": "bdc.ehumessagePopUpnext()",
+      "ng-disabled": null
+    },
+    {
+      "index": 11,
+      "html": "<button class=\"btn btn-clk\" ng-click=\"bdc.ehumessagePopUpclose()\">Cancel</button>",
+      "text": "Cancel",
+      "id": "",
+      "class": "btn btn-clk",
+      "ng-click": "bdc.ehumessagePopUpclose()",
+      "ng-disabled": null
+    },
+    {
+      "index": 12,
+      "html": "<button class=\"btn btn-act\" ng-click=\"bdc.ehumessagePopUpclose()\">OK</button>",
+      "text": "OK",
+      "id": "",
+      "class": "btn btn-act",
+      "ng-click": "bdc.ehumessagePopUpclose()",
+      "ng-disabled": null
+    },
+    {
+      "index": 13,
+      "html": "<button type=\"button\" class=\"close\" id=\"\" ng-click=\"bdc.ClosePopUp()\" data-dismiss=\"modal\">\n\t\t\t\t\t<!-- <img src=\"content/img/icon-close.png\"> -->\n\t\t\t\t</button>",
+      "text": "",
+      "id": "",
+      "class": "close",
+      "ng-click": "bdc.ClosePopUp()",
+      "ng-disabled": null
+    },
+    {
+      "index": 14,
+      "html": "<button class=\"btn btn-act\" id=\"\">\n\t\t\t\t\t\t\tYes\n\t\t\t\t\t\t</button>",
+      "text": "Yes",
+      "id": "",
+      "class": "btn btn-act",
+      "ng-click": null,
+      "ng-disabled": null
+    },
+    {
+      "index": 15,
+      "html": "<button class=\"btn clk text-right\" id=\"\">\n\t\t\t\t\t\t\tNo\n\t\t\t\t\t\t</button>",
+      "text": "No",
+      "id": "",
+      "class": "btn clk text-right",
+      "ng-click": null,
+      "ng-disabled": null
+    },
+    {
+      "index": 16,
+      "html": "<button type=\"button\" class=\"close\" id=\"\" ng-click=\"bdc.ClosePopUp()\" data-dismiss=\"modal\">\n\t\t\t\t\t<!-- <img src=\"content/img/icon-close.png\"> -->\n\t\t\t\t</button>",
+      "text": "",
+      "id": "",
+      "class": "close",
+      "ng-click": "bdc.ClosePopUp()",
+      "ng-disabled": null
+    },
+    {
+      "index": 17,
+      "html": "<button class=\"btn btn-act\" id=\"\">\n\t\t\t\t\t\t\tYes\n\t\t\t\t\t\t</button>",
+      "text": "Yes",
+      "id": "",
+      "class": "btn btn-act",
+      "ng-click": null,
+      "ng-disabled": null
+    },
+    {
+      "index": 18,
+      "html": "<button class=\"btn clk text-right\" id=\"\">\n\t\t\t\t\t\t\tNo\n\t\t\t\t\t\t</button>",
+      "text": "No",
+      "id": "",
+      "class": "btn clk text-right",
+      "ng-click": null,
+      "ng-disabled": null
+    },
+    {
+      "index": 19,
+      "html": "<button class=\"btn btn-act ng-binding\" ng-click=\"bdc.okCovidClick()\">Ok</button>",
+      "text": "Ok",
+      "id": "",
+      "class": "btn btn-act ng-binding",
+      "ng-click": "bdc.okCovidClick()",
+      "ng-disabled": null
+    },
+    {
+      "index": 20,
+      "html": "<button class=\"btn btn-act ng-binding\" ng-click=\"bdc.okCovidClick()\">Ok</button>",
+      "text": "Ok",
+      "id": "",
+      "class": "btn btn-act ng-binding",
+      "ng-click": "bdc.okCovidClick()",
+      "ng-disabled": null
+    },
+    {
+      "index": 21,
+      "html": "<button type=\"button\" class=\"close\" id=\"\" ng-click=\"bdc.ClosePopUp()\" data-dismiss=\"modal\">\n\t\t\t\t\t<!-- <img src=\"content/img/icon-close.png\"> -->\n\t\t\t\t</button>",
+      "text": "",
+      "id": "",
+      "class": "close",
+      "ng-click": "bdc.ClosePopUp()",
+      "ng-disabled": null
+    },
+    {
+      "index": 22,
+      "html": "<button type=\"button\" class=\"close\" id=\"\" ng-click=\"bdc.ClosePopUp()\" data-dismiss=\"modal\">\n\t\t\t\t\t<!-- <img src=\"content/img/icon-close.png\"> -->\n\t\t\t\t</button>",
+      "text": "",
+      "id": "",
+      "class": "close",
+      "ng-click": "bdc.ClosePopUp()",
+      "ng-disabled": null
+    },
+    {
+      "index": 23,
+      "html": "<button class=\"btn btn-act ng-binding\" ng-click=\"bdc.messagePopUp()\">Ok</button>",
+      "text": "Ok",
+      "id": "",
+      "class": "btn btn-act ng-binding",
+      "ng-click": "bdc.messagePopUp()",
+      "ng-disabled": null
+    },
+    {
+      "index": 24,
+      "html": "<button class=\"btn btn-act ng-binding\" ng-click=\"bdc.messagePopUpRazor()\">Ok</button>",
+      "text": "Ok",
+      "id": "",
+      "class": "btn btn-act ng-binding",
+      "ng-click": "bdc.messagePopUpRazor()",
+      "ng-disabled": null
+    },
+    {
+      "index": 25,
+      "html": "<button class=\"btn btn-act ng-binding\" ng-click=\"bdc.messagePopUpRazorDcb()\">Ok</button>",
+      "text": "Ok",
+      "id": "",
+      "class": "btn btn-act ng-binding",
+      "ng-click": "bdc.messagePopUpRazorDcb()",
+      "ng-disabled": null
+    }
+  ],
+  "timestamp": "2026-07-26T05:07:12.546Z"
+}

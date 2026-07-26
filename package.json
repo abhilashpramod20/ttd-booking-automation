@@ -1,0 +1,33 @@
+{
+  "name": "ttd-booking-automation",
+  "version": "1.0.0",
+  "description": "Guided UI interaction script for TTD Srivani ticket booking",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node scripts/login.js",
+    "login": "npm run start",
+    "donate": "npm run start",
+    "book": "npm run start",
+    "full-flow": "npm run start",
+    "full-flow-v2": "npm run start",
+    "interactive": "npm run start",
+    "inspect": "npm run start",
+    "test-continue": "npm run start"
+  },
+  "keywords": [
+    "ttd",
+    "tirupati",
+    "booking",
+    "playwright",
+    "automation"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "dotenv": "^16.3.1",
+    "playwright": "^1.48.0",
+    "tesseract.js": "^7.0.0"
+  }
+}

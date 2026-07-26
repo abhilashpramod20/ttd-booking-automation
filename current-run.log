@@ -1,0 +1,121 @@
+
+> ttd-booking-automation@1.0.0 full-flow
+> node scripts/full-flow.js
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TTD COMPLETE AUTOMATION FLOW
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[2026-07-26T05:51:19.980Z] [INFO] Login + Donation + Booking (automated)
+[2026-07-26T05:51:19.981Z] [INFO] Launching browser...
+[2026-07-26T05:51:20.767Z] [SUCCESS] Browser launched successfully
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  PHASE 1: LOGIN WITH AUTOMATIC CAPTCHA OCR
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[2026-07-26T05:51:20.767Z] [INFO] Navigating to login page...
+[2026-07-26T05:51:20.768Z] [INFO] Navigating to: https://tirupatibalaji.ap.gov.in/#/userLogin
+[2026-07-26T05:51:23.555Z] [SUCCESS] Successfully navigated to https://tirupatibalaji.ap.gov.in/#/userLogin
+[2026-07-26T05:51:23.556Z] [INFO] Waiting for login form to load...
+[2026-07-26T05:51:24.375Z] [INFO] Found login form using selector: [name="uName"]
+[2026-07-26T05:51:24.375Z] [SUCCESS] Login form loaded successfully
+[2026-07-26T05:51:24.500Z] [INFO] Screenshot saved: screenshots/01-login-form-ready.png
+[2026-07-26T05:51:24.500Z] [INFO] Filling username field...
+[2026-07-26T05:51:24.506Z] [SUCCESS] Username filled: abhilash.pramod@yahoo.com
+[2026-07-26T05:51:24.600Z] [INFO] Screenshot saved: screenshots/02-username-filled.png
+[2026-07-26T05:51:24.600Z] [INFO] Filling password field...
+[2026-07-26T05:51:24.623Z] [SUCCESS] Password filled (not shown for security)
+[2026-07-26T05:51:24.730Z] [INFO] Screenshot saved: screenshots/03-password-filled.png
+[2026-07-26T05:51:24.730Z] [INFO] Checking for CAPTCHA...
+[2026-07-26T05:51:25.738Z] [WARN] CAPTCHA field detected!
+[2026-07-26T05:51:25.896Z] [INFO] Screenshot saved: screenshots/04-captcha-visible.png
+[2026-07-26T05:51:25.896Z] [INFO] Running automatic OCR CAPTCHA recognition...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  CAPTCHA Recognition
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[2026-07-26T05:51:25.897Z] [INFO] Starting OCR CAPTCHA recognition...
+[2026-07-26T05:51:25.897Z] [INFO] Extracting CAPTCHA image element...
+[2026-07-26T05:51:25.905Z] [INFO] CAPTCHA image extracted and saved: screenshots/captcha-1785045085904.png
+[2026-07-26T05:51:25.905Z] [INFO] Running OCR on: screenshots/captcha-1785045085904.png
+[2026-07-26T05:51:26.044Z] [INFO] OCR recognized CAPTCHA: YOEXTRAS
+[2026-07-26T05:51:26.044Z] [SUCCESS] ✓ CAPTCHA recognized via OCR: YOEXTRAS
+[2026-07-26T05:51:26.044Z] [INFO] Filling CAPTCHA code: YOEXTRAS
+[2026-07-26T05:51:26.048Z] [SUCCESS] ✓ CAPTCHA code entered successfully via OCR
+[2026-07-26T05:51:26.169Z] [INFO] Screenshot saved: screenshots/05-captcha-filled.png
+[2026-07-26T05:51:26.169Z] [INFO] Submitting login form...
+[2026-07-26T05:51:26.172Z] [INFO] Found login button using selector: button:has-text("Login")
+[2026-07-26T05:51:26.216Z] [INFO] Login button clicked, waiting for authentication...
+[2026-07-26T05:51:26.340Z] [INFO] Screenshot saved: screenshots/06-login-submitted.png
+[2026-07-26T05:51:26.341Z] [INFO] Waiting for authentication to complete...
+[2026-07-26T05:51:39.480Z] [INFO] Screenshot saved: screenshots/07-after-login.png
+[2026-07-26T05:51:39.481Z] [SUCCESS] ✓ Login process completed!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  PHASE 2: SRIVANI TRUST DONATION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[2026-07-26T05:51:39.481Z] [INFO] Navigating to donation confirmation page...
+[2026-07-26T05:51:39.481Z] [INFO] Current URL: https://tirupatibalaji.ap.gov.in/#/userLogin
+[2026-07-26T05:51:39.481Z] [WARN] Not on donation page. Navigating...
+[2026-07-26T05:51:39.481Z] [INFO] Navigating to: https://tirupatibalaji.ap.gov.in/#/SrivaniDonationConfirm
+[2026-07-26T05:51:39.516Z] [SUCCESS] Successfully navigated to https://tirupatibalaji.ap.gov.in/#/SrivaniDonationConfirm
+[2026-07-26T05:51:41.671Z] [INFO] Screenshot saved: screenshots/08-donation-form-ready.png
+[2026-07-26T05:51:41.671Z] [INFO] Filling donation amount...
+[2026-07-26T05:51:41.675Z] [INFO] Found donation field: input:nth-of-type(1)
+[2026-07-26T05:51:41.679Z] [SUCCESS] Donation amount filled: ₹10000
+[2026-07-26T05:51:41.776Z] [INFO] Screenshot saved: screenshots/09-donation-amount-filled.png
+[2026-07-26T05:51:41.776Z] [INFO] Checking Corpus Donation checkbox...
+[2026-07-26T05:51:42.056Z] [INFO] Screenshot saved: screenshots/10-checkbox1-checked.png
+[2026-07-26T05:51:42.056Z] [INFO] Checking Indian Citizenship checkbox...
+[2026-07-26T05:51:42.158Z] [INFO] Screenshot saved: screenshots/11-checkbox2-checked.png
+[2026-07-26T05:51:42.158Z] [INFO] Looking for Continue button...
+[2026-07-26T05:51:42.166Z] [INFO] Found Continue button
+[2026-07-26T05:51:42.257Z] [INFO] Screenshot saved: screenshots/12-before-continue-click.png
+[2026-07-26T05:51:42.293Z] [WARN] Click failed: locator.scrollIntoViewIfNeeded: Error: strict mode violation: locator('button.btn-act') resolved to 20 elements:
+    1) <button id="" class="btn btn-act" ng-click="closeupdatedis()">OK</button> aka locator('#updatedis').getByText('OK')
+    2) <button ng-click="bdc.closePopUp()" class="btn btn-act ng-binding">Ok</button> aka locator('#sessionPopUp').getByText('Ok')
+    3) <button class="btn btn-act" ng-click="bdc.messageclosePopUp()">↵⇆⇆⇆⇆⇆⇆⇆⇆Ok↵⇆⇆⇆⇆⇆⇆⇆</button> aka locator('#depositPopUp').getByText('Ok', { exact: true })
+    4) <button class="btn btn-act ng-binding" ng-click="bdc.sevaDipPayNow()"></button> aka locator('#dipCongoPopUp button')
+    5) <button class="btn btn-act" ng-click="bdc.darshanDipPayNow()">Pay Now</button> aka getByText('Pay Now', { exact: true })
+    6) <button class="btn btn-act ng-binding" ng-click="bdc.messagePopUpnext()"></button> aka locator('#dipNextDatePopUp > .modal-dialog > .modal-content > .modal-body > .col-xs-12 > .btn')
+    7) <button class="btn btn-act" ng-click="bdc.donmessagePopUpnext()">Proceed</button> aka locator('#donationPopup').getByText('Proceed', { exact: true })
+    8) <button class="btn btn-act" ng-click="bdc.donmessagePopUpclose()">OK</button> aka locator('#donationPopup').getByText('OK', { exact: true })
+    9) <button class="btn btn-act" ng-click="bdc.ehumessagePopUpnext()">Proceed</button> aka locator('#ehundiPopup').getByText('Proceed', { exact: true })
+    10) <button class="btn btn-act" ng-click="bdc.ehumessagePopUpclose()">OK</button> aka locator('#ehundiPopup').getByText('OK', { exact: true })
+    ...
+
+Call log:
+  - waiting for locator('button.btn-act')
+, trying JavaScript click
+[2026-07-26T05:51:42.295Z] [SUCCESS] ✓ Continue button clicked (via JavaScript)
+[2026-07-26T05:51:44.436Z] [INFO] Screenshot saved: screenshots/13-after-continue-click.png
+[2026-07-26T05:51:44.436Z] [INFO] Looking for 'Current Booking' button...
+[2026-07-26T05:51:44.442Z] [WARN] Current Booking button not found on this page
+[2026-07-26T05:51:44.442Z] [INFO] Modal may not have appeared or button has different selector
+[2026-07-26T05:51:44.552Z] [INFO] Screenshot saved: screenshots/15-no-booking-button.png
+[2026-07-26T05:51:44.553Z] [SUCCESS] ✓ Donation flow completed successfully!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ✅ FULL FLOW COMPLETED
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[2026-07-26T05:51:44.553Z] [SUCCESS] ✓ Login completed successfully!
+[2026-07-26T05:51:44.553Z] [SUCCESS] ✓ Donation automation completed successfully!
+[2026-07-26T05:51:44.553Z] [INFO] 
+Configuration used:
+[2026-07-26T05:51:44.553Z] [INFO] - Username: abhilash.pramod@yahoo.com
+[2026-07-26T05:51:44.553Z] [INFO] - Donation Amount: ₹10000
+[2026-07-26T05:51:44.553Z] [INFO] - Corpus Donation: Yes
+[2026-07-26T05:51:44.553Z] [INFO] - Indian Citizenship: Yes
+[2026-07-26T05:51:44.553Z] [INFO] 
+Next steps:
+[2026-07-26T05:51:44.553Z] [INFO] 1. Verify Current Booking page loaded in browser
+[2026-07-26T05:51:44.553Z] [INFO] 2. Select ticket date and pilgrim details
+[2026-07-26T05:51:44.553Z] [INFO] 3. Complete booking and payment
+[2026-07-26T05:51:44.553Z] [INFO] Full flow completed. Browser remains open for manual verification.
+[2026-07-26T05:51:44.553Z] [INFO] Close the browser manually when done.
+[2026-07-26T05:51:44.553Z] [SUCCESS] ✓ Complete automation flow executed successfully!

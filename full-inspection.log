@@ -1,0 +1,60 @@
+
+=== STEP 1: FULL LOGIN FLOW ===
+
+⏳ PLEASE: Solve CAPTCHA and click Login button
+   (Waiting up to 60 seconds...)
+
+✓ After login, URL: https://tirupatibalaji.ap.gov.in/#/userLogin
+❌ Login failed - still on login page
+⏳ Waiting 10 more seconds in case page is loading...
+
+=== STEP 2: NAVIGATING TO DONATION PAGE ===
+
+Current URL before navigation: https://tirupatibalaji.ap.gov.in/#/userLogin
+✓ After navigation to donation page, URL: https://tirupatibalaji.ap.gov.in/#/userLogin
+
+=== STEP 3: PAGE CONTENT ANALYSIS ===
+
+Checkboxes found: 0
+
+Visible buttons:
+  1. "Login" (ngClick: logc.continueSubmit(userForm);submitted=true;)
+
+Text inputs:
+  1. Enter your registered Email ID (visible: true)
+  2. Enter Captcha Code (visible: true)
+
+=== STEP 4: PAGE TEXT SAMPLE ===
+
+Donation
+Kalyanamandapam
+Publications
+Log In
+Login
+  Om Namo Venkatesaya
+Login
+
+ 
+
+Login
+New User? Sign Up
+Forgot Password?
+Pilgrim Services
+Srivani Trust Donations
+Other Trust Donations
+Privilege Redemptions
+Cottage Donors
+Arjitha Seva
+Sapthagiri Magazine
+Diaries/Calendars &
+Panchangam
+Panchagavya Products
+Kalyana Mandapam
+Lease and Rental Payments
+Demand Collection Balance
+IT Deduction Certificate
+Latest Updates
+ Darshan & Accommodation Quota (Except break darshan on 12. 10. 2026 & 20. 10. 202
+
+
+Closing in 5 seconds...

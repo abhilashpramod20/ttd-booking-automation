@@ -1,0 +1,76 @@
+
+> ttd-booking-automation@1.0.0 full-flow
+> node scripts/full-flow.js
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TTD COMPLETE AUTOMATION FLOW
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[2026-07-26T07:30:10.970Z] [INFO] Login + Donation + Booking (automated with interactive fallbacks)
+[2026-07-26T07:30:10.970Z] [INFO] Browser will remain ACTIVE after automation for manual continuation
+
+[2026-07-26T07:30:10.971Z] [INFO] Launching browser...
+[2026-07-26T07:30:12.428Z] [SUCCESS] Browser launched successfully
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  PHASE 1: LOGIN WITH AUTOMATIC CAPTCHA OCR
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[2026-07-26T07:30:12.428Z] [INFO] Navigating to login page...
+[2026-07-26T07:30:12.428Z] [INFO] Navigating to: https://tirupatibalaji.ap.gov.in/#/userLogin
+[2026-07-26T07:30:14.335Z] [SUCCESS] Successfully navigated to https://tirupatibalaji.ap.gov.in/#/userLogin
+[2026-07-26T07:30:14.336Z] [INFO] Waiting for login form to load...
+[2026-07-26T07:30:14.655Z] [INFO] Found login form using selector: [name="uName"]
+[2026-07-26T07:30:14.655Z] [SUCCESS] Login form loaded successfully
+[2026-07-26T07:30:14.743Z] [INFO] Screenshot saved: screenshots/01-login-form-ready.png
+[2026-07-26T07:30:14.743Z] [INFO] Filling username field...
+[2026-07-26T07:30:14.754Z] [SUCCESS] Username filled: abhilash.pramod@yahoo.com
+[2026-07-26T07:30:14.827Z] [INFO] Screenshot saved: screenshots/02-username-filled.png
+[2026-07-26T07:30:14.827Z] [INFO] Filling password field...
+[2026-07-26T07:30:14.855Z] [SUCCESS] Password filled (not shown for security)
+[2026-07-26T07:30:14.921Z] [INFO] Screenshot saved: screenshots/03-password-filled.png
+[2026-07-26T07:30:14.921Z] [INFO] Checking for CAPTCHA...
+[2026-07-26T07:30:15.937Z] [WARN] CAPTCHA field detected!
+[2026-07-26T07:30:16.036Z] [INFO] Screenshot saved: screenshots/04-captcha-visible.png
+[2026-07-26T07:30:16.036Z] [INFO] Running automatic OCR CAPTCHA recognition...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  CAPTCHA Recognition
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[2026-07-26T07:30:16.037Z] [INFO] Starting OCR CAPTCHA recognition...
+[2026-07-26T07:30:16.037Z] [INFO] Extracting CAPTCHA image element...
+[2026-07-26T07:30:16.055Z] [INFO] CAPTCHA image extracted and saved: screenshots/captcha-1785051016055.png
+[2026-07-26T07:30:16.055Z] [INFO] Running OCR on: screenshots/captcha-1785051016055.png
+[2026-07-26T07:30:16.223Z] [INFO] OCR recognized CAPTCHA: GVMVWXA4
+[2026-07-26T07:30:16.223Z] [SUCCESS] ✓ CAPTCHA recognized via OCR: GVMVWXA4
+[2026-07-26T07:30:16.223Z] [INFO] Filling CAPTCHA code: GVMVWXA4
+[2026-07-26T07:30:16.227Z] [SUCCESS] ✓ CAPTCHA code entered successfully
+[2026-07-26T07:30:16.297Z] [INFO] Screenshot saved: screenshots/05-captcha-filled.png
+[2026-07-26T07:30:16.297Z] [INFO] Submitting login form...
+[2026-07-26T07:30:16.301Z] [INFO] Found login button using selector: button:has-text("Login")
+[2026-07-26T07:30:16.329Z] [INFO] Login button clicked, waiting for authentication...
+[2026-07-26T07:30:16.397Z] [INFO] Screenshot saved: screenshots/06-login-submitted.png
+[2026-07-26T07:30:16.398Z] [INFO] Waiting for authentication to complete...
+[2026-07-26T07:30:29.495Z] [INFO] Screenshot saved: screenshots/07-after-login.png
+[2026-07-26T07:30:29.495Z] [SUCCESS] ✓ Login process completed!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  VERIFYING LOGIN SUCCESS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[2026-07-26T07:30:29.495Z] [INFO] Current URL after login: https://tirupatibalaji.ap.gov.in/#/userLogin
+[2026-07-26T07:30:29.495Z] [ERROR] ❌ LOGIN FAILED - Still on login page!
+[2026-07-26T07:30:29.496Z] [ERROR] CAPTCHA may have been incorrect or credentials invalid
+[2026-07-26T07:30:29.496Z] [ERROR] ❌ [2026-07-26T07:30:29.496Z] ERROR: Login verification failed | currentUrl=https://tirupatibalaji.ap.gov.in/#/userLogin
+[2026-07-26T07:30:29.496Z] ERROR: Login verification failed | currentUrl=https://tirupatibalaji.ap.gov.in/#/userLogin
+[2026-07-26T07:30:29.496Z] [ERROR] ❌ Login verification failed!
+[2026-07-26T07:30:29.496Z] [WARN] Current URL: https://tirupatibalaji.ap.gov.in/#/userLogin
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Login failed. Type 'manual' to handle manually, or 'skip' to skip to donation page
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Hint: Enter: manual or skip
+[1G[0JEnter value: [14G

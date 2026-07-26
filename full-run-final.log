@@ -1,0 +1,109 @@
+
+> ttd-booking-automation@1.0.0 full-flow
+> node scripts/full-flow.js
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TTD COMPLETE AUTOMATION FLOW
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[2026-07-26T06:05:30.696Z] [INFO] Login + Donation + Booking (automated)
+[2026-07-26T06:05:30.697Z] [INFO] Launching browser...
+[2026-07-26T06:05:31.899Z] [SUCCESS] Browser launched successfully
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  PHASE 1: LOGIN WITH AUTOMATIC CAPTCHA OCR
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[2026-07-26T06:05:31.900Z] [INFO] Navigating to login page...
+[2026-07-26T06:05:31.900Z] [INFO] Navigating to: https://tirupatibalaji.ap.gov.in/#/userLogin
+[2026-07-26T06:05:33.697Z] [SUCCESS] Successfully navigated to https://tirupatibalaji.ap.gov.in/#/userLogin
+[2026-07-26T06:05:33.698Z] [INFO] Waiting for login form to load...
+[2026-07-26T06:05:34.533Z] [INFO] Found login form using selector: [name="uName"]
+[2026-07-26T06:05:34.533Z] [SUCCESS] Login form loaded successfully
+[2026-07-26T06:05:34.675Z] [INFO] Screenshot saved: screenshots/01-login-form-ready.png
+[2026-07-26T06:05:34.675Z] [INFO] Filling username field...
+[2026-07-26T06:05:34.685Z] [SUCCESS] Username filled: abhilash.pramod@yahoo.com
+[2026-07-26T06:05:34.798Z] [INFO] Screenshot saved: screenshots/02-username-filled.png
+[2026-07-26T06:05:34.798Z] [INFO] Filling password field...
+[2026-07-26T06:05:34.803Z] [SUCCESS] Password filled (not shown for security)
+[2026-07-26T06:05:34.897Z] [INFO] Screenshot saved: screenshots/03-password-filled.png
+[2026-07-26T06:05:34.897Z] [INFO] Checking for CAPTCHA...
+[2026-07-26T06:05:35.909Z] [WARN] CAPTCHA field detected!
+[2026-07-26T06:05:36.058Z] [INFO] Screenshot saved: screenshots/04-captcha-visible.png
+[2026-07-26T06:05:36.058Z] [INFO] Running automatic OCR CAPTCHA recognition...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  CAPTCHA Recognition
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[2026-07-26T06:05:36.058Z] [INFO] Starting OCR CAPTCHA recognition...
+[2026-07-26T06:05:36.059Z] [INFO] Extracting CAPTCHA image element...
+[2026-07-26T06:05:36.065Z] [INFO] CAPTCHA image extracted and saved: screenshots/captcha-1785045936065.png
+[2026-07-26T06:05:36.066Z] [INFO] Running OCR on: screenshots/captcha-1785045936065.png
+[2026-07-26T06:05:36.196Z] [INFO] OCR recognized CAPTCHA: JKD7C3C
+[2026-07-26T06:05:36.197Z] [SUCCESS] ✓ CAPTCHA recognized via OCR: JKD7C3C
+[2026-07-26T06:05:36.197Z] [INFO] Filling CAPTCHA code: JKD7C3C
+[2026-07-26T06:05:36.201Z] [SUCCESS] ✓ CAPTCHA code entered successfully via OCR
+[2026-07-26T06:05:36.316Z] [INFO] Screenshot saved: screenshots/05-captcha-filled.png
+[2026-07-26T06:05:36.316Z] [INFO] Submitting login form...
+[2026-07-26T06:05:36.320Z] [INFO] Found login button using selector: button:has-text("Login")
+[2026-07-26T06:05:36.366Z] [INFO] Login button clicked, waiting for authentication...
+[2026-07-26T06:05:36.478Z] [INFO] Screenshot saved: screenshots/06-login-submitted.png
+[2026-07-26T06:05:36.478Z] [INFO] Waiting for authentication to complete...
+[2026-07-26T06:05:39.730Z] [INFO] Screenshot saved: screenshots/07-after-login.png
+[2026-07-26T06:05:39.730Z] [SUCCESS] ✓ Login process completed!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  VERIFYING LOGIN SUCCESS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[2026-07-26T06:05:39.730Z] [INFO] Current URL after login: https://tirupatibalaji.ap.gov.in/#/welcome
+[2026-07-26T06:05:39.731Z] [SUCCESS] ✓ LOGIN VERIFICATION PASSED
+[2026-07-26T06:05:39.731Z] [SUCCESS] ✓ Successfully authenticated!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  PHASE 2: SRIVANI TRUST DONATION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[2026-07-26T06:05:39.731Z] [INFO] Navigating to donation confirmation page...
+[2026-07-26T06:05:39.731Z] [INFO] Current URL: https://tirupatibalaji.ap.gov.in/#/welcome
+[2026-07-26T06:05:39.731Z] [WARN] Not on donation page. Navigating...
+[2026-07-26T06:05:39.731Z] [INFO] Navigating to: https://tirupatibalaji.ap.gov.in/#/SrivaniDonationConfirm
+[2026-07-26T06:05:39.762Z] [SUCCESS] Successfully navigated to https://tirupatibalaji.ap.gov.in/#/SrivaniDonationConfirm
+[2026-07-26T06:05:41.880Z] [INFO] Screenshot saved: screenshots/08-donation-form-ready.png
+[2026-07-26T06:05:43.881Z] [INFO] Looking for Indian Citizenship Status Declaration checkbox...
+[2026-07-26T06:05:43.898Z] [INFO] Found Citizenship Declaration checkbox
+[2026-07-26T06:05:43.950Z] [SUCCESS] ✓ Citizenship Declaration checkbox checked
+[2026-07-26T06:05:44.052Z] [INFO] Screenshot saved: screenshots/09-checkbox-checked.png
+[2026-07-26T06:05:44.052Z] [INFO] Looking for Continue button...
+[2026-07-26T06:05:44.054Z] [INFO] Found Continue button
+[2026-07-26T06:05:44.147Z] [INFO] Screenshot saved: screenshots/10-before-continue-click.png
+[2026-07-26T06:05:44.768Z] [SUCCESS] ✓ Continue button clicked
+[2026-07-26T06:05:47.212Z] [INFO] Screenshot saved: screenshots/11-after-continue-click.png
+[2026-07-26T06:05:47.212Z] [INFO] Looking for 'Current Booking' button...
+[2026-07-26T06:05:47.219Z] [WARN] Current Booking button not found on this page
+[2026-07-26T06:05:47.219Z] [INFO] Modal may not have appeared or button has different selector
+[2026-07-26T06:05:47.298Z] [INFO] Screenshot saved: screenshots/15-no-booking-button.png
+[2026-07-26T06:05:47.298Z] [SUCCESS] ✓ Donation flow completed successfully!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ✅ FULL FLOW COMPLETED
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[2026-07-26T06:05:47.299Z] [SUCCESS] ✓ Login completed successfully!
+[2026-07-26T06:05:47.299Z] [SUCCESS] ✓ Donation automation completed successfully!
+[2026-07-26T06:05:47.299Z] [INFO] 
+Configuration used:
+[2026-07-26T06:05:47.299Z] [INFO] - Username: abhilash.pramod@yahoo.com
+[2026-07-26T06:05:47.299Z] [INFO] - Donation Amount: ₹10000
+[2026-07-26T06:05:47.299Z] [INFO] - Corpus Donation: Yes
+[2026-07-26T06:05:47.299Z] [INFO] - Indian Citizenship: Yes
+[2026-07-26T06:05:47.299Z] [INFO] 
+Next steps:
+[2026-07-26T06:05:47.299Z] [INFO] 1. Verify Current Booking page loaded in browser
+[2026-07-26T06:05:47.299Z] [INFO] 2. Select ticket date and pilgrim details
+[2026-07-26T06:05:47.299Z] [INFO] 3. Complete booking and payment
+[2026-07-26T06:05:47.299Z] [INFO] Full flow completed. Browser remains open for manual verification.
+[2026-07-26T06:05:47.299Z] [INFO] Close the browser manually when done.
+[2026-07-26T06:05:47.299Z] [SUCCESS] ✓ Complete automation flow executed successfully!

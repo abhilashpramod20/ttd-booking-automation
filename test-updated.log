@@ -1,0 +1,68 @@
+
+> ttd-booking-automation@1.0.0 full-flow
+> node scripts/full-flow.js
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TTD COMPLETE AUTOMATION FLOW
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[2026-07-26T06:03:32.017Z] [INFO] Login + Donation + Booking (automated)
+[2026-07-26T06:03:32.018Z] [INFO] Launching browser...
+[2026-07-26T06:03:32.876Z] [SUCCESS] Browser launched successfully
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  PHASE 1: LOGIN WITH AUTOMATIC CAPTCHA OCR
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[2026-07-26T06:03:32.876Z] [INFO] Navigating to login page...
+[2026-07-26T06:03:32.877Z] [INFO] Navigating to: https://tirupatibalaji.ap.gov.in/#/userLogin
+[2026-07-26T06:03:34.655Z] [SUCCESS] Successfully navigated to https://tirupatibalaji.ap.gov.in/#/userLogin
+[2026-07-26T06:03:34.656Z] [INFO] Waiting for login form to load...
+[2026-07-26T06:03:35.491Z] [INFO] Found login form using selector: [name="uName"]
+[2026-07-26T06:03:35.492Z] [SUCCESS] Login form loaded successfully
+[2026-07-26T06:03:35.641Z] [INFO] Screenshot saved: screenshots/01-login-form-ready.png
+[2026-07-26T06:03:35.641Z] [INFO] Filling username field...
+[2026-07-26T06:03:35.648Z] [SUCCESS] Username filled: abhilash.pramod@yahoo.com
+[2026-07-26T06:03:35.765Z] [INFO] Screenshot saved: screenshots/02-username-filled.png
+[2026-07-26T06:03:35.765Z] [INFO] Filling password field...
+[2026-07-26T06:03:35.787Z] [SUCCESS] Password filled (not shown for security)
+[2026-07-26T06:03:35.898Z] [INFO] Screenshot saved: screenshots/03-password-filled.png
+[2026-07-26T06:03:35.898Z] [INFO] Checking for CAPTCHA...
+[2026-07-26T06:03:36.910Z] [WARN] CAPTCHA field detected!
+[2026-07-26T06:03:37.056Z] [INFO] Screenshot saved: screenshots/04-captcha-visible.png
+[2026-07-26T06:03:37.056Z] [INFO] Running automatic OCR CAPTCHA recognition...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  CAPTCHA Recognition
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[2026-07-26T06:03:37.057Z] [INFO] Starting OCR CAPTCHA recognition...
+[2026-07-26T06:03:37.057Z] [INFO] Extracting CAPTCHA image element...
+[2026-07-26T06:03:37.064Z] [INFO] CAPTCHA image extracted and saved: screenshots/captcha-1785045817064.png
+[2026-07-26T06:03:37.064Z] [INFO] Running OCR on: screenshots/captcha-1785045817064.png
+[2026-07-26T06:03:37.196Z] [INFO] OCR recognized CAPTCHA: 20S678SS
+[2026-07-26T06:03:37.196Z] [SUCCESS] ✓ CAPTCHA recognized via OCR: 20S678SS
+[2026-07-26T06:03:37.196Z] [INFO] Filling CAPTCHA code: 20S678SS
+[2026-07-26T06:03:37.200Z] [SUCCESS] ✓ CAPTCHA code entered successfully via OCR
+[2026-07-26T06:03:37.316Z] [INFO] Screenshot saved: screenshots/05-captcha-filled.png
+[2026-07-26T06:03:37.316Z] [INFO] Submitting login form...
+[2026-07-26T06:03:37.319Z] [INFO] Found login button using selector: button:has-text("Login")
+[2026-07-26T06:03:37.364Z] [INFO] Login button clicked, waiting for authentication...
+[2026-07-26T06:03:37.486Z] [INFO] Screenshot saved: screenshots/06-login-submitted.png
+[2026-07-26T06:03:37.486Z] [INFO] Waiting for authentication to complete...
+[2026-07-26T06:03:50.630Z] [INFO] Screenshot saved: screenshots/07-after-login.png
+[2026-07-26T06:03:50.630Z] [SUCCESS] ✓ Login process completed!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  VERIFYING LOGIN SUCCESS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[2026-07-26T06:03:50.630Z] [INFO] Current URL after login: https://tirupatibalaji.ap.gov.in/#/userLogin
+[2026-07-26T06:03:50.630Z] [ERROR] ❌ LOGIN FAILED - Still on login page!
+[2026-07-26T06:03:50.630Z] [ERROR] CAPTCHA may have been incorrect or credentials invalid
+[2026-07-26T06:03:50.630Z] [ERROR] Full flow failed: Login verification failed - URL still shows login page
+[2026-07-26T06:03:50.752Z] [INFO] Screenshot saved: screenshots/error-full-flow-error-2026-07-26T06-03-50-630Z.png
+[2026-07-26T06:03:50.752Z] [INFO] Full flow completed. Browser remains open for manual verification.
+[2026-07-26T06:03:50.752Z] [INFO] Close the browser manually when done.
+[2026-07-26T06:03:50.752Z] [ERROR] Script execution failed: Login verification failed - URL still shows login page

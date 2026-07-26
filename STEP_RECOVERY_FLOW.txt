@@ -1,0 +1,278 @@
+╔════════════════════════════════════════════════════════════════════════════════╗
+║                    UNIVERSAL STEP FAILURE RECOVERY SYSTEM                      ║
+║                                                                                ║
+║  When ANY step fails, automation PAUSES, lets you fix it, then CONTINUES      ║
+╚════════════════════════════════════════════════════════════════════════════════╝
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ COMPLETE AUTOMATION FLOW WITH RECOVERY                                        ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+STEP 1: LOGIN FORM LOADING
+═════════════════════════════════════════════════════════════════════════════════
+   ① Script navigates to login page
+      ↓
+   ✓ Form found? → Continue to Step 2
+      ↓
+   ✗ Form not found?
+      ↓
+      ⚠️  PAUSE - Show recovery prompt
+      "Please wait for login page to load or refresh the page"
+      ↓
+      ⏸️  User takes manual action in browser
+      ↓
+      User presses ENTER
+      ↓
+      → CONTINUE TO STEP 2
+
+STEP 2: USERNAME ENTRY
+═════════════════════════════════════════════════════════════════════════════════
+   ① Script attempts to fill username field
+      ↓
+   ✓ Field found? → Fill and continue to Step 3
+      ↓
+   ✗ Field not found?
+      ↓
+      ⚠️  PAUSE - Show recovery prompt
+      "Please manually enter your username in the browser"
+      ↓
+      ⏸️  User enters username manually
+      ↓
+      User presses ENTER
+      ↓
+      → CONTINUE TO STEP 3
+
+STEP 3: PASSWORD ENTRY
+═════════════════════════════════════════════════════════════════════════════════
+   ① Script attempts to fill password field
+      ↓
+   ✓ Field found? → Fill and continue to Step 4
+      ↓
+   ✗ Field not found?
+      ↓
+      ⚠️  PAUSE - Show recovery prompt
+      "Please manually enter your password in the browser"
+      ↓
+      ⏸️  User enters password manually
+      ↓
+      User presses ENTER
+      ↓
+      → CONTINUE TO STEP 4
+
+STEP 4: CAPTCHA (Automatic with Fallback)
+═════════════════════════════════════════════════════════════════════════════════
+   ① Script runs automatic OCR recognition (~70% success)
+      ↓
+   ✓ CAPTCHA recognized & entered? → Continue to Step 5
+      ↓
+   ✗ OCR failed?
+      ↓
+      Script asks: "Enter CAPTCHA code manually"
+      ↓
+      ⏸️  User reads CAPTCHA and enters code
+      ↓
+      → CONTINUE TO STEP 5
+
+STEP 5: DONATION AMOUNT (₹30,000)
+═════════════════════════════════════════════════════════════════════════════════
+   ① Script attempts to find and fill amount field
+      ↓
+   ✓ Field filled successfully? → Continue to Step 6
+      ↓
+   ✗ Field not found or not fillable?
+      ↓
+      ⚠️  PAUSE - Show recovery prompt
+      "Please manually enter ₹30,000 in the amount field"
+      ↓
+      ⏸️  User enters amount manually
+      ↓
+      User presses ENTER
+      ↓
+      → CONTINUE TO STEP 6
+
+STEP 6: CITIZENSHIP DECLARATION CHECKBOX
+═════════════════════════════════════════════════════════════════════════════════
+   ① Script attempts to check checkbox (with 4 strategies)
+      ├─ Strategy 1: Playwright check()
+      ├─ Strategy 2: Click + event dispatch
+      ├─ Strategy 3: Force click
+      └─ Strategy 4: Angular scope manipulation
+      ↓
+   ✓ Checkbox checked with Angular model true? → Continue to Step 7
+      ↓
+   ✗ All strategies failed?
+      ↓
+      ⚠️  PAUSE - Show recovery prompt
+      "Please manually check the Citizenship Declaration checkbox"
+      ↓
+      ⏸️  User checks checkbox manually
+      ↓
+      User presses ENTER
+      ↓
+      → CONTINUE TO STEP 7
+
+STEP 7: CORPUS DONATION CHECKBOX (Optional)
+═════════════════════════════════════════════════════════════════════════════════
+   ① Script attempts to check corpus checkbox (with 4 strategies)
+      ├─ Strategy 1: Playwright check()
+      ├─ Strategy 2: Click + event dispatch
+      ├─ Strategy 3: Force click
+      └─ Strategy 4: Angular scope manipulation
+      ↓
+   ✓ Checkbox checked? → Continue to Step 8
+      ↓
+   ✗ All strategies failed?
+      ↓
+      ⚠️  PAUSE - Show recovery prompt
+      "Please manually check the Corpus Donation checkbox"
+      ↓
+      ⏸️  User checks checkbox manually
+      ↓
+      User presses ENTER
+      ↓
+      → CONTINUE TO STEP 8
+
+STEP 8: CLICK CONTINUE BUTTON
+═════════════════════════════════════════════════════════════════════════════════
+   ① Script attempts to find Continue button (6 selectors tried)
+      ↓
+   ✓ Button found? → Go to clicking phase
+      ↓
+   ✗ Button not found?
+      ↓
+      ⚠️  PAUSE - Show recovery prompt
+      "Please manually locate and click the Continue button"
+      ↓
+      ⏸️  User finds and clicks Continue button
+      ↓
+      User presses ENTER
+      ↓
+      → CONTINUE TO STEP 9
+   
+   ② If button found, attempt clicking (4 strategies)
+      ├─ Strategy 1: Playwright click()
+      ├─ Strategy 2: JavaScript click()
+      ├─ Strategy 3: Force click
+      └─ Strategy 4: Angular submit
+      ↓
+   ✓ Button clicked successfully? → Continue to Step 9
+      ↓
+   ✗ All strategies failed?
+      ↓
+      ⚠️  PAUSE - Show recovery prompt
+      "Please manually click the Continue button"
+      ↓
+      ⏸️  User clicks button manually
+      ↓
+      User presses ENTER
+      ↓
+      → CONTINUE TO STEP 9
+
+STEP 9: PAGE NAVIGATION
+═════════════════════════════════════════════════════════════════════════════════
+   ① Script monitors URL for change (10 second timeout)
+      ↓
+   ✓ URL changed? (Page navigated to booking form) → SUCCESS! Go to Step 10
+      ↓
+   ✗ URL didn't change after 10 seconds?
+      ↓
+      ⚠️  PROMPT user with options:
+      
+      "Continue button was clicked but page didn't navigate.
+       
+       Options:
+       - Type 'wait' to wait 10 more seconds
+       - Type 'manual' to manually navigate to next step
+       - Type 'proceed' to continue without navigation"
+      
+      Option A: User types 'wait'
+      ↓
+      → Wait 10 more seconds for navigation
+      ↓
+      ✓ Navigation happened? → Go to Step 10
+         ✗ Still no navigation? → Keep browser open for manual completion
+      
+      Option B: User types 'manual'
+      ↓
+      ⚠️  PAUSE - Show recovery prompt
+      "Please manually navigate to the next step in the browser"
+      ↓
+      ⏸️  User navigates manually
+      ↓
+      User presses ENTER
+      ↓
+      → CONTINUE TO STEP 10
+      
+      Option C: User types 'proceed'
+      ↓
+      → Continue anyway (page may have loaded without URL change)
+      ↓
+      → CONTINUE TO STEP 10
+
+STEP 10: BOOKING FORM (Manual Completion)
+═════════════════════════════════════════════════════════════════════════════════
+   Browser remains open for user to manually:
+   ✓ Select darshan date
+   ✓ Enter pilgrim details
+   ✓ Complete payment
+   ✓ Finish booking
+
+   User presses ENTER when complete → Script exits gracefully
+
+╔════════════════════════════════════════════════════════════════════════════════╗
+║                             KEY PRINCIPLES                                    ║
+╚════════════════════════════════════════════════════════════════════════════════╝
+
+✓ FAIL ONCE → OFFER RECOVERY
+  When any step fails, don't retry automatically. Show recovery immediately.
+
+✓ NO TIMEOUT ON PAUSES
+  User can take as long as needed to complete manual action.
+
+✓ NEVER SKIP STEPS
+  Every step is important. Manual recovery ensures sequence integrity.
+
+✓ CLEAR INSTRUCTIONS
+  Each recovery prompt explains exactly what user should do.
+
+✓ CONTINUE TO NEXT STEP
+  After manual recovery, automation continues to the next step (not start over).
+
+✓ FULL VISIBILITY
+  Screenshots and logs show everything that happened.
+
+╔════════════════════════════════════════════════════════════════════════════════╗
+║                            HOW TO USE                                         ║
+╚════════════════════════════════════════════════════════════════════════════════╝
+
+1. Start the script:
+   $ npm run full-flow
+
+2. When any step fails, you'll see a clear prompt
+
+3. Complete the action in the browser
+
+4. Press ENTER to continue
+
+5. Script automatically moves to the next step
+
+6. If another step fails, repeat 2-5
+
+7. When automation is done, complete remaining steps manually
+
+8. Press ENTER when you're done → Script exits
+
+╔════════════════════════════════════════════════════════════════════════════════╗
+║                         IMPROVEMENTS OVER OLD SYSTEM                          ║
+╚════════════════════════════════════════════════════════════════════════════════╝
+
+OLD SYSTEM                          NEW SYSTEM
+════════════════════════════════════════════════════════════════════════════════
+❌ Fails on error                   ✅ Pauses for manual intervention
+❌ Retries 3 times                  ✅ Fails fast, shows recovery
+❌ Skip step option                 ✅ No skip - complete all steps
+❌ Limited user guidance            ✅ Step-specific instructions
+❌ Timeout on pause                 ✅ Wait indefinitely
+❌ Confusing error messages         ✅ Clear recovery options
+❌ May miss critical steps          ✅ Sequence always maintained
+

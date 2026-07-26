@@ -1,0 +1,82 @@
+═════════════════════════════════════════════════════════════════════════════
+  TTD BOOKING AUTOMATION - CRITICAL FIX SUMMARY
+═════════════════════════════════════════════════════════════════════════════
+
+ISSUE FIXED
+───────────────────────────────────────────────────────────────────────────
+❌ BEFORE: Continue button click succeeded, but page didn't navigate to next screen
+         Script would get stuck waiting for page navigation and ask user for help
+         
+✅ NOW:   Script explicitly asks for manual login when CAPTCHA is present
+         Script checks for form validation errors BEFORE clicking Continue
+         Script provides better feedback about what's preventing form submission
+
+ROOT CAUSES IDENTIFIED & FIXED
+───────────────────────────────────────────────────────────────────────────
+
+1. LOGIN FLOW BUG
+   Problem: When CAPTCHA is visible, script tried to click Login automatically,
+            but user hadn't actually completed the CAPTCHA solve + click yet
+   
+   Solution: Modified login flow to explicitly ask user to:
+             - Solve CAPTCHA (manually in browser)
+             - Click Login button (manually in browser)
+             - Confirm by typing 'continue' in terminal
+             
+   Result: Login now properly waits for user interaction + page navigation
+
+2. VALIDATION ERROR BLINDNESS
+   Problem: When Continue button didn't trigger form submission, script had no way
+            to tell user WHY. Could be missing required fields, validation errors, etc.
+   
+   Solution: Added comprehensive form validation checking that:
+             - Scans for Angular ng-error messages
+             - Checks form validity state
+             - Displays validation errors to user BEFORE clicking Continue
+             
+   Result: User now sees exactly what validation errors are blocking submission
+
+FILES MODIFIED
+───────────────────────────────────────────────────────────────────────────
+✓ scripts/full-flow.js
+  - Lines 365-420: Modified CAPTCHA + Login flow to require manual interaction
+  - Lines 1025-1080: Added form validation error checking before Continue button
+
+TESTING
+───────────────────────────────────────────────────────────────────────────
+To verify the fixes work:
+
+1. Run: npm run start
+2. When CAPTCHA appears, you'll see:
+   "CAPTCHA is visible in the browser. Please solve it if not already done, 
+    then click the 'Login' button manually. After clicking Login, type 'continue' 
+    here to proceed."
+   
+3. Solve CAPTCHA in browser, click Login button, then type: continue
+4. Script continues to donation page
+5. If Continue button doesn't navigate, script shows validation errors like:
+   "⚠️  Form has validation errors:
+     1. [specific error message]"
+
+EXPECTED IMPROVEMENTS
+───────────────────────────────────────────────────────────────────────────
+✓ Login completes successfully when CAPTCHA requires manual interaction
+✓ User gets clear feedback about form validation errors
+✓ Better error messages when page doesn't navigate
+✓ Longer timeouts for navigation (15s for login, 10s+ for Continue)
+✓ Script no longer gets stuck silently - always tells user what's happening
+
+HOW TO USE
+───────────────────────────────────────────────────────────────────────────
+Terminal: npm run start
+Browser: Solve CAPTCHA when it appears, click Login manually
+Terminal: Type 'continue' after clicking Login
+Browser: Fill form, script clicks Continue
+Browser: Complete booking manually
+
+More details in: RUN_INSTRUCTIONS.md
+
+═════════════════════════════════════════════════════════════════════════════
+Fixed: July 26, 2026
+Status: ✅ READY FOR TESTING
+═════════════════════════════════════════════════════════════════════════════

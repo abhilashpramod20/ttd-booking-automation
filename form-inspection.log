@@ -1,0 +1,58 @@
+1. Logging in...
+2. MANUAL: Solve CAPTCHA and click Login
+3. Navigating to donation page...
+
+4. Analyzing form structure...
+
+=== FORM STRUCTURE ===
+Has <form>: true
+
+=== INPUTS (3) ===
+1. text: name=uName, visible=true, required=true, ngModel=logc.pageDetails.uName
+2. password: name=pwd, visible=true, required=true, ngModel=logc.pageDetails.pwd
+3. text: name=, visible=true, required=false, ngModel=null
+
+=== CHECKBOXES (0) ===
+
+=== BUTTONS (39) ===
+1. "" (button): visible=false, disabled=false, ngClick=null
+2. "OK" (submit): visible=false, disabled=false, ngClick=closeupdatedis()
+3. "Ok" (submit): visible=false, disabled=false, ngClick=bdc.closePopUp()
+4. "Ok" (submit): visible=false, disabled=false, ngClick=bdc.messageclosePopUp()
+5. "" (submit): visible=false, disabled=false, ngClick=bdc.sevaDipPayNow()
+6. "Pay Now" (submit): visible=false, disabled=false, ngClick=bdc.darshanDipPayNow()
+7. "" (submit): visible=false, disabled=false, ngClick=bdc.messagePopUpnext()
+8. "Proceed" (submit): visible=false, disabled=false, ngClick=bdc.donmessagePopUpnext()
+9. "Cancel" (submit): visible=false, disabled=false, ngClick=bdc.donmessagePopUpclose()
+10. "OK" (submit): visible=false, disabled=false, ngClick=bdc.donmessagePopUpclose()
+11. "Proceed" (submit): visible=false, disabled=false, ngClick=bdc.ehumessagePopUpnext()
+12. "Cancel" (submit): visible=false, disabled=false, ngClick=bdc.ehumessagePopUpclose()
+13. "OK" (submit): visible=false, disabled=false, ngClick=bdc.ehumessagePopUpclose()
+14. "" (button): visible=false, disabled=false, ngClick=bdc.ClosePopUp()
+15. "Yes" (submit): visible=false, disabled=false, ngClick=null
+16. "No" (submit): visible=false, disabled=false, ngClick=null
+17. "" (button): visible=false, disabled=false, ngClick=bdc.ClosePopUp()
+18. "Yes" (submit): visible=false, disabled=false, ngClick=null
+19. "No" (submit): visible=false, disabled=false, ngClick=null
+20. "Ok" (submit): visible=false, disabled=false, ngClick=bdc.okCovidClick()
+21. "Ok" (submit): visible=false, disabled=false, ngClick=bdc.okCovidClick()
+22. "" (button): visible=false, disabled=false, ngClick=bdc.ClosePopUp()
+23. "" (button): visible=false, disabled=false, ngClick=bdc.ClosePopUp()
+24. "Ok" (submit): visible=false, disabled=false, ngClick=bdc.messagePopUp()
+25. "Ok" (submit): visible=false, disabled=false, ngClick=bdc.messagePopUpRazor()
+26. "Ok" (submit): visible=false, disabled=false, ngClick=bdc.messagePopUpRazorDcb()
+27. "" (button): visible=false, disabled=false, ngClick=bdc.ClosePopUp()
+28. "" (button): visible=false, disabled=false, ngClick=bdc.ClosePopUp()
+29. "" (button): visible=false, disabled=false, ngClick=bdc.ClosePopUp()
+30. "" (button): visible=false, disabled=false, ngClick=bdc.ClosePopUp()
+31. "" (button): visible=false, disabled=false, ngClick=bdc.ClosePopUp()
+32. "" (button): visible=false, disabled=false, ngClick=bdc.ClosePopUp()
+33. "" (button): visible=false, disabled=false, ngClick=bdc.ClosePopUp()
+34. "" (button): visible=false, disabled=false, ngClick=bdc.ClosePopUp()
+35. "" (button): visible=false, disabled=false, ngClick=bdc.ClosePopUp()
+36. "" (button): visible=false, disabled=false, ngClick=bdc.ClosePopUp()
+37. "Login" (button): visible=true, disabled=false, ngClick=logc.continueSubmit(userForm);submitted=true;
+38. "Proceed" (submit): visible=false, disabled=false, ngClick=logc.openupdatePass()
+39. "Cancel" (submit): visible=false, disabled=false, ngClick=logc.closeupdatePass()
+
+Closing browser in 5 seconds...

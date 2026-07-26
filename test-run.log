@@ -1,0 +1,113 @@
+
+> ttd-booking-automation@1.0.0 full-flow
+> node scripts/full-flow.js
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TTD COMPLETE AUTOMATION FLOW
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[2026-07-26T05:54:07.815Z] [INFO] Login + Donation + Booking (automated)
+[2026-07-26T05:54:07.815Z] [INFO] Launching browser...
+[2026-07-26T05:54:08.679Z] [SUCCESS] Browser launched successfully
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  PHASE 1: LOGIN WITH AUTOMATIC CAPTCHA OCR
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[2026-07-26T05:54:08.680Z] [INFO] Navigating to login page...
+[2026-07-26T05:54:08.680Z] [INFO] Navigating to: https://tirupatibalaji.ap.gov.in/#/userLogin
+[2026-07-26T05:54:10.631Z] [SUCCESS] Successfully navigated to https://tirupatibalaji.ap.gov.in/#/userLogin
+[2026-07-26T05:54:10.631Z] [INFO] Waiting for login form to load...
+[2026-07-26T05:54:11.461Z] [INFO] Found login form using selector: [name="uName"]
+[2026-07-26T05:54:11.461Z] [SUCCESS] Login form loaded successfully
+[2026-07-26T05:54:11.608Z] [INFO] Screenshot saved: screenshots/01-login-form-ready.png
+[2026-07-26T05:54:11.608Z] [INFO] Filling username field...
+[2026-07-26T05:54:11.619Z] [SUCCESS] Username filled: abhilash.pramod@yahoo.com
+[2026-07-26T05:54:11.729Z] [INFO] Screenshot saved: screenshots/02-username-filled.png
+[2026-07-26T05:54:11.729Z] [INFO] Filling password field...
+[2026-07-26T05:54:11.752Z] [SUCCESS] Password filled (not shown for security)
+[2026-07-26T05:54:11.865Z] [INFO] Screenshot saved: screenshots/03-password-filled.png
+[2026-07-26T05:54:11.865Z] [INFO] Checking for CAPTCHA...
+[2026-07-26T05:54:12.877Z] [WARN] CAPTCHA field detected!
+[2026-07-26T05:54:13.021Z] [INFO] Screenshot saved: screenshots/04-captcha-visible.png
+[2026-07-26T05:54:13.021Z] [INFO] Running automatic OCR CAPTCHA recognition...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  CAPTCHA Recognition
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[2026-07-26T05:54:13.022Z] [INFO] Starting OCR CAPTCHA recognition...
+[2026-07-26T05:54:13.022Z] [INFO] Extracting CAPTCHA image element...
+[2026-07-26T05:54:13.028Z] [INFO] CAPTCHA image extracted and saved: screenshots/captcha-1785045253028.png
+[2026-07-26T05:54:13.029Z] [INFO] Running OCR on: screenshots/captcha-1785045253028.png
+[2026-07-26T05:54:13.163Z] [INFO] OCR recognized CAPTCHA: MEBJ2HH
+[2026-07-26T05:54:13.163Z] [SUCCESS] ✓ CAPTCHA recognized via OCR: MEBJ2HH
+[2026-07-26T05:54:13.163Z] [INFO] Filling CAPTCHA code: MEBJ2HH
+[2026-07-26T05:54:13.167Z] [SUCCESS] ✓ CAPTCHA code entered successfully via OCR
+[2026-07-26T05:54:13.281Z] [INFO] Screenshot saved: screenshots/05-captcha-filled.png
+[2026-07-26T05:54:13.281Z] [INFO] Submitting login form...
+[2026-07-26T05:54:13.284Z] [INFO] Found login button using selector: button:has-text("Login")
+[2026-07-26T05:54:13.330Z] [INFO] Login button clicked, waiting for authentication...
+[2026-07-26T05:54:13.445Z] [INFO] Screenshot saved: screenshots/06-login-submitted.png
+[2026-07-26T05:54:13.445Z] [INFO] Waiting for authentication to complete...
+[2026-07-26T05:54:16.681Z] [INFO] Screenshot saved: screenshots/07-after-login.png
+[2026-07-26T05:54:16.681Z] [SUCCESS] ✓ Login process completed!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  VERIFYING LOGIN SUCCESS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[2026-07-26T05:54:16.682Z] [INFO] Current URL after login: https://tirupatibalaji.ap.gov.in/#/welcome
+[2026-07-26T05:54:16.682Z] [SUCCESS] ✓ LOGIN VERIFICATION PASSED
+[2026-07-26T05:54:16.682Z] [SUCCESS] ✓ Successfully authenticated!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  PHASE 2: SRIVANI TRUST DONATION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[2026-07-26T05:54:16.682Z] [INFO] Navigating to donation confirmation page...
+[2026-07-26T05:54:16.682Z] [INFO] Current URL: https://tirupatibalaji.ap.gov.in/#/welcome
+[2026-07-26T05:54:16.682Z] [WARN] Not on donation page. Navigating...
+[2026-07-26T05:54:16.682Z] [INFO] Navigating to: https://tirupatibalaji.ap.gov.in/#/SrivaniDonationConfirm
+[2026-07-26T05:54:16.714Z] [SUCCESS] Successfully navigated to https://tirupatibalaji.ap.gov.in/#/SrivaniDonationConfirm
+[2026-07-26T05:54:18.830Z] [INFO] Screenshot saved: screenshots/08-donation-form-ready.png
+[2026-07-26T05:54:18.830Z] [INFO] Filling donation amount...
+[2026-07-26T05:54:18.834Z] [INFO] Found donation field: input:nth-of-type(1)
+[2026-07-26T05:54:48.844Z] [ERROR] Full flow failed: elementHandle.fill: Timeout 30000ms exceeded.
+Call log:
+    - fill("")
+  - attempting fill action
+    2 × waiting for element to be visible, enabled and editable
+      - element is not visible
+    - retrying fill action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and editable
+      - element is not visible
+    - retrying fill action
+      - waiting 100ms
+    59 × waiting for element to be visible, enabled and editable
+       - element is not visible
+     - retrying fill action
+       - waiting 500ms
+
+[2026-07-26T05:54:48.958Z] [INFO] Screenshot saved: screenshots/error-full-flow-error-2026-07-26T05-54-48-845Z.png
+[2026-07-26T05:54:48.958Z] [INFO] Full flow completed. Browser remains open for manual verification.
+[2026-07-26T05:54:48.958Z] [INFO] Close the browser manually when done.
+[2026-07-26T05:54:48.958Z] [ERROR] Script execution failed: elementHandle.fill: Timeout 30000ms exceeded.
+Call log:
+    - fill("")
+  - attempting fill action
+    2 × waiting for element to be visible, enabled and editable
+      - element is not visible
+    - retrying fill action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and editable
+      - element is not visible
+    - retrying fill action
+      - waiting 100ms
+    59 × waiting for element to be visible, enabled and editable
+       - element is not visible
+     - retrying fill action
+       - waiting 500ms
+

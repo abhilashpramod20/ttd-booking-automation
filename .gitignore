@@ -1,0 +1,8 @@
+config/
+screenshots/
+logs/
+node_modules/
+.env
+
+# Keep these
+!.gitkeep
