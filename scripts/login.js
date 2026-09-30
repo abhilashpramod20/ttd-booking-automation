@@ -65,6 +65,281 @@ async function clickCurrentBooking(page, browserManager) {
   return false;
 }
 
+async function clickBreakDarshanYes(page) {
+  logger.section("Post-Booking Step: Confirm Break Darshan (Yes)");
+
+  const maxWaitMs = 60000;
+  const waitStart = Date.now();
+
+  const yesStillVisible = async () =>
+    await page
+      .locator('#cok, button.agreeBtn')
+      .first()
+      .isVisible()
+      .catch(() => false);
+
+  while (Date.now() - waitStart < maxWaitMs) {
+    const yesLocators = [
+      page.locator("#cok").first(),
+      page.locator("button.agreeBtn").first(),
+      page.locator('button[ng-click*="okCovidClick" i]').first(),
+      page.locator('button').filter({ hasText: /^\s*yes\s*$/i }).first()
+    ];
+
+    for (let i = 0; i < yesLocators.length; i++) {
+      const locator = yesLocators[i];
+      const count = await locator.count().catch(() => 0);
+      if (count === 0) {
+        continue;
+      }
+
+      const visible = await locator.isVisible().catch(() => false);
+      if (!visible) {
+        continue;
+      }
+
+      try {
+        await locator.scrollIntoViewIfNeeded().catch(() => null);
+        await page.waitForTimeout(200);
+        await locator.click({ timeout: 5000, force: true });
+        await page.waitForTimeout(1500);
+
+        if (!(await yesStillVisible())) {
+          logger.success("✓ Clicked Yes on Break Darshan confirmation");
+          return true;
+        }
+
+        logger.warn(`Yes click (locator ${i}) did not dismiss the dialog`);
+      } catch (e) {
+        logger.warn(`Yes click failed (locator ${i}): ${e.message}`);
+      }
+    }
+
+    const angularClicked = await page.evaluate(() => {
+      const btn =
+        document.querySelector("#cok") ||
+        document.querySelector("button.agreeBtn") ||
+        Array.from(document.querySelectorAll("button")).find(
+          (el) => (el.textContent || "").trim().toLowerCase() === "yes"
+        );
+      if (!btn) return false;
+
+      if (window.angular) {
+        const el = window.angular.element(btn);
+        el.triggerHandler("click");
+        return true;
+      }
+
+      btn.dispatchEvent(new MouseEvent("click", { bubbles: true, cancelable: true, view: window }));
+      return true;
+    }).catch(() => false);
+
+    if (angularClicked) {
+      await page.waitForTimeout(1500);
+      if (!(await yesStillVisible())) {
+        logger.success("✓ Clicked Yes on Break Darshan confirmation (Angular fallback)");
+        return true;
+      }
+    }
+
+    await page.waitForTimeout(400);
+  }
+
+  logger.warn("⚠️ Could not auto-click Yes on Break Darshan confirmation.");
+  return false;
+}
+
+const PILGRIMS = [
+  { name: "Mk Pramod", age: "65", gender: "Male", proofNumber: "916317674472" },
+  { name: "Abhilash Pramod", age: "34", gender: "Male", proofNumber: "862240912807" },
+  { name: "Sharanya P", age: "32", gender: "Female", proofNumber: "758129312783" }
+];
+
+async function selectByLabel(select, pattern, fieldName) {
+  const labels = await select.locator("option").allTextContents().catch(() => []);
+  const match = labels.find((label) => pattern.test(label.trim()));
+  if (!match) {
+    logger.warn(`${fieldName}: no option matching ${pattern} (options: ${labels.join(" | ")})`);
+    return false;
+  }
+  await select.selectOption({ label: match });
+  return true;
+}
+
+async function fillPilgrimDetails(page) {
+  logger.section("Post-Confirmation Step: Fill Pilgrim Details (3 persons)");
+
+  const names = page.locator('input[placeholder*="Enter Name" i]');
+  const ages = page.locator('input[placeholder*="Enter Age" i]');
+  const idNumbers = page.locator('input[placeholder*="ID Card" i]');
+
+  const maxWaitMs = 30000;
+  const waitStart = Date.now();
+  let nameCount = 0;
+  while (Date.now() - waitStart < maxWaitMs) {
+    nameCount = await names.count().catch(() => 0);
+    if (nameCount >= PILGRIMS.length) {
+      break;
+    }
+    await page.waitForTimeout(500);
+  }
+
+  if (nameCount < PILGRIMS.length) {
+    logger.warn(`⚠️ Found only ${nameCount} name fields, expected ${PILGRIMS.length}`);
+    await page.screenshot({ path: "screenshots/pilgrim-form-not-found.png" }).catch(() => null);
+    return false;
+  }
+
+  const selects = page.locator("select");
+  const selectCount = await selects.count().catch(() => 0);
+  const genderIdx = [];
+  const proofIdx = [];
+
+  for (let i = 0; i < selectCount; i++) {
+    const select = selects.nth(i);
+    if (!(await select.isVisible().catch(() => false))) {
+      continue;
+    }
+    const options = await select.locator("option").allTextContents().catch(() => []);
+    if (options.some((option) => /female/i.test(option))) {
+      genderIdx.push(i);
+    } else {
+      proofIdx.push(i);
+    }
+  }
+
+  logger.info(`Detected ${genderIdx.length} gender selects, ${proofIdx.length} ID-proof selects`);
+
+  for (let i = 0; i < PILGRIMS.length; i++) {
+    const pilgrim = PILGRIMS[i];
+
+    try {
+      await names.nth(i).fill(pilgrim.name);
+      await ages.nth(i).fill(pilgrim.age);
+      await page.waitForTimeout(800);
+
+      if (genderIdx[i] !== undefined) {
+        await selectByLabel(
+          selects.nth(genderIdx[i]),
+          new RegExp(`^${pilgrim.gender}$`, "i"),
+          `Row ${i + 1} gender`
+        );
+      }
+
+      if (proofIdx[i] !== undefined) {
+        await selectByLabel(selects.nth(proofIdx[i]), /aadhaar/i, `Row ${i + 1} ID proof type`);
+        await page.waitForTimeout(500);
+      }
+
+      await idNumbers.nth(i).fill(pilgrim.proofNumber);
+      logger.success(`✓ Row ${i + 1} filled: ${pilgrim.name} / ${pilgrim.age} / ${pilgrim.gender}`);
+    } catch (e) {
+      logger.warn(`Row ${i + 1} (${pilgrim.name}) fill failed: ${e.message}`);
+    }
+  }
+
+  await page.screenshot({ path: "screenshots/pilgrim-details-filled.png" }).catch(() => null);
+  logger.success("✓ Pilgrim details filled");
+  return true;
+}
+
+const CONTINUE_AT = process.env.CONTINUE_AT || "09:03:00";
+
+async function waitForCaptchaEntry(page) {
+  logger.section("Manual Step: Enter CAPTCHA in the browser");
+
+  const captcha = page.locator('input[placeholder*="Captcha" i]').first();
+  const maxWaitMs = 15 * 60 * 1000;
+  const waitStart = Date.now();
+  let notified = false;
+  let lastValue = "";
+  let stableSince = 0;
+
+  while (Date.now() - waitStart < maxWaitMs) {
+    const value = (await captcha.inputValue().catch(() => "")).trim();
+
+    if (value.length >= 4) {
+      if (value !== lastValue) {
+        lastValue = value;
+        stableSince = Date.now();
+      } else if (Date.now() - stableSince >= 1500) {
+        logger.success(`✓ CAPTCHA entered (${value.length} chars)`);
+        return true;
+      }
+    } else {
+      lastValue = value;
+      stableSince = 0;
+    }
+
+    if (!notified) {
+      logger.warn("Waiting for you to type the CAPTCHA in the browser...");
+      notified = true;
+    }
+    await page.waitForTimeout(300);
+  }
+
+  logger.warn("⚠️ CAPTCHA still empty after waiting");
+  return false;
+}
+
+async function clickContinueAt(page, targetTime) {
+  logger.section(`Timed Step: Click Continue at ${targetTime}`);
+
+  const [hh, mm, ss] = targetTime.split(":").map(Number);
+  const target = new Date();
+  target.setHours(hh, mm, ss, 0);
+
+  if (target.getTime() <= Date.now()) {
+    logger.warn(`⚠️ Target time ${targetTime} already passed, clicking Continue now`);
+  } else {
+    let lastLogged = 0;
+    while (Date.now() < target.getTime()) {
+      const remainingMs = target.getTime() - Date.now();
+      if (remainingMs > 2000) {
+        if (Date.now() - lastLogged >= 15000) {
+          logger.info(`Waiting for ${targetTime} — ${Math.ceil(remainingMs / 1000)}s remaining`);
+          lastLogged = Date.now();
+        }
+        await page.waitForTimeout(Math.min(500, remainingMs - 2000));
+      } else {
+        await page.waitForTimeout(25);
+      }
+    }
+  }
+
+  const continueBtn = page.locator("#smp").first();
+  try {
+    await continueBtn.click({ timeout: 5000, force: true });
+    logger.success(`✓ Clicked Continue at ${new Date().toLocaleTimeString()}`);
+  } catch (e) {
+    logger.warn(`Continue click failed: ${e.message}, trying Angular fallback`);
+    const fallbackClicked = await page.evaluate(() => {
+      const btn =
+        document.querySelector("#smp") ||
+        Array.from(document.querySelectorAll("button")).find(
+          (el) => (el.textContent || "").trim().toLowerCase() === "continue"
+        );
+      if (!btn) return false;
+      if (window.angular) {
+        window.angular.element(btn).triggerHandler("click");
+        return true;
+      }
+      btn.dispatchEvent(new MouseEvent("click", { bubbles: true, cancelable: true, view: window }));
+      return true;
+    }).catch(() => false);
+
+    if (!fallbackClicked) {
+      logger.warn("⚠️ Could not click Continue automatically");
+      return false;
+    }
+    logger.success(`✓ Clicked Continue via Angular fallback at ${new Date().toLocaleTimeString()}`);
+  }
+
+  await page.waitForTimeout(3000);
+  await page.screenshot({ path: "screenshots/after-continue-submit.png" }).catch(() => null);
+  return true;
+}
+
 async function completeDonationConfirmForm(page, browserManager) {
   logger.section("Post-Donate Step: Fill Amount + Checkboxes + Continue");
 
@@ -186,6 +461,19 @@ async function completeDonationConfirmForm(page, browserManager) {
       "After clicking Current Booking in browser, press ENTER here"
     );
   }
+
+  const yesClicked = await clickBreakDarshanYes(page);
+  if (!yesClicked) {
+    await waitForEnter(
+      "Please click 'Yes' on the Break Darshan confirmation manually in the browser",
+      "After clicking Yes in browser, press ENTER here"
+    );
+  }
+
+  await fillPilgrimDetails(page);
+
+  await waitForCaptchaEntry(page);
+  await clickContinueAt(page, CONTINUE_AT);
 }
 
 async function clickContinueToDonate(page, browserManager) {

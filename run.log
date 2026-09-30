@@ -1,0 +1,98 @@
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TTD Guided Booking - Login Script
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[2026-08-30T11:22:36.486Z] [INFO] This script will guide you through the login process with manual approval at each step.
+[2026-08-30T11:22:36.488Z] [INFO] Launching browser...
+[2026-08-30T11:22:37.787Z] [SUCCESS] Browser launched successfully
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TTD Login Flow - Step 1: Navigate to Website
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[2026-08-30T11:22:37.788Z] [INFO] Navigating to: https://tirupatibalaji.ap.gov.in/#/userLogin
+[2026-08-30T11:22:40.482Z] [SUCCESS] Successfully navigated to https://tirupatibalaji.ap.gov.in/#/userLogin
+[2026-08-30T11:22:40.483Z] [INFO] Waiting for login form to load...
+[2026-08-30T11:22:41.292Z] [INFO] Found login form using selector: [name="uName"]
+[2026-08-30T11:22:41.292Z] [SUCCESS] Login form loaded successfully
+[2026-08-30T11:22:41.292Z] [INFO] Auto-proceeding with form fill (credentials available in config)
+[2026-08-30T11:22:41.292Z] [INFO] Filling username field...
+[2026-08-30T11:22:42.311Z] [SUCCESS] Username filled: abhilash.pramod@yahoo.com
+[2026-08-30T11:22:42.311Z] [INFO] Filling password field...
+[2026-08-30T11:22:43.321Z] [SUCCESS] Password filled (not shown for security)
+[2026-08-30T11:22:43.321Z] [INFO] Checking for CAPTCHA...
+[2026-08-30T11:22:44.327Z] [WARN] CAPTCHA field detected!
+[2026-08-30T11:22:44.328Z] [WARN] Please enter CAPTCHA in browser and click Login manually.
+[2026-08-30T11:22:44.328Z] [INFO] Waiting for manual CAPTCHA submit and navigation...
+[2026-08-30T11:23:43.516Z] [SUCCESS] ✓ Manual CAPTCHA login submitted and navigation detected
+[2026-08-30T11:23:46.524Z] [SUCCESS] ✓ Login successful! Dashboard loaded.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Post-Login Step: Open Srivani Trust Donations
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[2026-08-30T11:23:53.397Z] [WARN] Clicked candidate 2, but navigation not detected yet
+[2026-08-30T11:23:53.407Z] [WARN] Trying DOM-based click fallback for Srivani Trust Donations...
+[2026-08-30T11:23:55.917Z] [WARN] Click navigation not confirmed. Falling back to direct Srivani URL...
+[2026-08-30T11:23:55.917Z] [INFO] Navigating to: https://tirupatibalaji.ap.gov.in/#/srivaniedonations
+[2026-08-30T11:23:56.936Z] [SUCCESS] Successfully navigated to https://tirupatibalaji.ap.gov.in/#/srivaniedonations
+[2026-08-30T11:23:58.938Z] [SUCCESS] ✓ Reached Srivani donations screen via direct URL fallback
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Post-Srivani Step: Click Continue to Donate
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[2026-08-30T11:24:03.896Z] [SUCCESS] ✓ Clicked Continue to Donate and navigation detected
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Post-Donate Step: Fill Amount + Checkboxes + Continue
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[2026-08-30T11:24:07.844Z] [SUCCESS] ✓ Donation amount entered: 30000
+[2026-08-30T11:24:09.866Z] [SUCCESS] ✓ Both declaration checkboxes checked
+[2026-08-30T11:24:14.662Z] [SUCCESS] ✓ Donation form Continue clicked
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Post-Continue Step: Click Current Booking
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[2026-08-30T11:24:19.002Z] [SUCCESS] ✓ Clicked Current Booking
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Post-Booking Step: Confirm Break Darshan (Yes)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[2026-08-30T11:24:22.775Z] [SUCCESS] ✓ Clicked Yes on Break Darshan confirmation
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Post-Confirmation Step: Fill Pilgrim Details (3 persons)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[2026-08-30T11:24:22.793Z] [INFO] Detected 3 gender selects, 3 ID-proof selects
+[2026-08-30T11:24:29.137Z] [SUCCESS] ✓ Row 1 filled: Mk Pramod / 65 / Male
+[2026-08-30T11:24:35.484Z] [SUCCESS] ✓ Row 2 filled: Abhilash Pramod / 34 / Male
+[2026-08-30T11:24:41.867Z] [SUCCESS] ✓ Row 3 filled: Sharanya P / 32 / Female
+[2026-08-30T11:24:42.014Z] [SUCCESS] ✓ Pilgrim details filled
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Manual Step: Enter CAPTCHA in the browser
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[2026-08-30T11:24:42.017Z] [WARN] Waiting for you to type the CAPTCHA in the browser...
+[2026-08-30T11:24:52.634Z] [SUCCESS] ✓ CAPTCHA entered (6 chars)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Timed Step: Click Continue at 16:55:00
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[2026-08-30T11:24:52.636Z] [INFO] Waiting for 16:55:00 — 8s remaining
+[2026-08-30T11:25:01.075Z] [SUCCESS] ✓ Clicked Continue at 4:55:01 pm
+[2026-08-30T11:25:04.193Z] [INFO] Login flow completed. Browser remains open for next steps.
+[2026-08-30T11:25:04.193Z] [INFO] You can now run the booking script or close the browser manually.
+[2026-08-30T11:25:04.193Z] [SUCCESS] ✓ Login process completed successfully!
+[2026-08-30T11:25:04.193Z] [INFO] 
+Single-script mode is active.
+[2026-08-30T11:25:04.193Z] [INFO] Use only 'npm run start' for this flow.
+[2026-08-30T11:25:04.193Z] [INFO] 
+Browser will remain open. Close it manually when done.

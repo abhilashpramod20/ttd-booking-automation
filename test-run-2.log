@@ -1,0 +1,215 @@
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TTD COMPLETE AUTOMATION FLOW
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[2026-08-30T08:36:12.114Z] [INFO] Login + Donation + Booking (automated with interactive fallbacks)
+[2026-08-30T08:36:12.117Z] [INFO] Browser will remain ACTIVE after automation for manual continuation
+
+[2026-08-30T08:36:12.117Z] [INFO] Launching browser...
+[2026-08-30T08:36:13.359Z] [SUCCESS] Browser launched successfully
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  PHASE 1: LOGIN (MANUAL CAPTCHA ENTRY)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[2026-08-30T08:36:13.359Z] [INFO] Navigating to login page...
+[2026-08-30T08:36:13.359Z] [INFO] Navigating to: https://tirupatibalaji.ap.gov.in/#/userLogin
+[2026-08-30T08:36:15.215Z] [SUCCESS] Successfully navigated to https://tirupatibalaji.ap.gov.in/#/userLogin
+[2026-08-30T08:36:15.215Z] [INFO] Waiting for login form to load...
+[2026-08-30T08:36:15.517Z] [INFO] Found login form using selector: [name="uName"]
+[2026-08-30T08:36:15.517Z] [SUCCESS] Login form loaded successfully
+[2026-08-30T08:36:15.608Z] [INFO] Screenshot saved: screenshots/01-login-form-ready.png
+[2026-08-30T08:36:15.608Z] [INFO] Filling username field...
+[2026-08-30T08:36:15.611Z] [SUCCESS] Username filled: abhilash.pramod@yahoo.com
+[2026-08-30T08:36:15.685Z] [INFO] Screenshot saved: screenshots/02-username-filled.png
+[2026-08-30T08:36:15.685Z] [INFO] Filling password field...
+[2026-08-30T08:36:15.689Z] [SUCCESS] Password filled (not shown for security)
+[2026-08-30T08:36:15.769Z] [INFO] Screenshot saved: screenshots/03-password-filled.png
+[2026-08-30T08:36:15.769Z] [INFO] Checking for CAPTCHA...
+[2026-08-30T08:36:18.776Z] [WARN] CAPTCHA field detected!
+[2026-08-30T08:36:18.918Z] [INFO] Screenshot saved: screenshots/04-captcha-visible.png
+[2026-08-30T08:36:18.918Z] [WARN] ⚠️ CAPTCHA is present. Please enter CAPTCHA manually in the browser.
+[2026-08-30T08:36:18.918Z] [INFO] Waiting for CAPTCHA input in browser (no terminal input needed)...
+[2026-08-30T08:36:46.640Z] [SUCCESS] ✓ CAPTCHA entered manually by user
+[2026-08-30T08:36:46.724Z] [INFO] Screenshot saved: screenshots/05-captcha-filled.png
+[2026-08-30T08:36:46.724Z] [INFO] CAPTCHA captured - clicking Login button...
+[2026-08-30T08:36:46.725Z] [INFO] 📋 [2026-08-30T08:36:46.725Z] ACTION: CAPTCHA entered manually - clicking Login button automatically | reason=user-entered-captcha
+[2026-08-30T08:36:46.725Z] ACTION: CAPTCHA entered manually - clicking Login button automatically | reason=user-entered-captcha
+[2026-08-30T08:36:46.725Z] [INFO] Attempting to find and click Login button...
+[2026-08-30T08:36:46.734Z] [INFO] Trying to find button by text content...
+[2026-08-30T08:36:46.738Z] [SUCCESS] ✓ Login button clicked by text content
+[2026-08-30T08:36:46.738Z] [INFO] 📋 [2026-08-30T08:36:46.738Z] ACTION: Login button clicked by text content | 
+[2026-08-30T08:36:46.738Z] ACTION: Login button clicked by text content | 
+[2026-08-30T08:36:46.738Z] [INFO] Waiting for authentication to complete...
+[2026-08-30T08:36:50.354Z] [SUCCESS] ✓ Login completed - navigation detected
+[2026-08-30T08:36:50.354Z] [SUCCESS] ✓ [2026-08-30T08:36:50.354Z] DECISION: Login Click | Options=[automatic] | Selected=completed
+[2026-08-30T08:36:50.354Z] DECISION: Login Click | Options=[automatic] | Selected=completed
+[2026-08-30T08:36:52.451Z] [INFO] Screenshot saved: screenshots/06-after-login-attempt.png
+[2026-08-30T08:36:52.452Z] [SUCCESS] ✓ Login process completed!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  VERIFYING LOGIN SUCCESS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[2026-08-30T08:36:52.452Z] [INFO] Current URL after login: https://tirupatibalaji.ap.gov.in/#/welcome
+[2026-08-30T08:36:52.548Z] [INFO] Screenshot saved: screenshots/07-after-login.png
+[2026-08-30T08:36:52.548Z] [SUCCESS] ✓ LOGIN VERIFICATION PASSED
+[2026-08-30T08:36:52.548Z] [SUCCESS] ✓ Successfully authenticated!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  PHASE 2: OPEN SRIVANI TRUST DONATIONS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[2026-08-30T08:36:52.548Z] [INFO] Current URL after login: https://tirupatibalaji.ap.gov.in/#/welcome
+[2026-08-30T08:36:54.666Z] [INFO] Screenshot saved: screenshots/08-welcome-page.png
+[2026-08-30T08:36:57.031Z] [SUCCESS] ✓ Clicked Srivani Trust Donations
+[2026-08-30T08:36:57.031Z] [INFO] 📋 [2026-08-30T08:36:57.031Z] ACTION: Srivani Trust Donations clicked | locatorIndex=2
+[2026-08-30T08:36:57.031Z] ACTION: Srivani Trust Donations clicked | locatorIndex=2
+[2026-08-30T08:36:59.125Z] [INFO] Screenshot saved: screenshots/09-srivani-donation-opened.png
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  PHASE 3: HANDLE CONFIRMATION DIALOG
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[2026-08-30T08:36:59.125Z] [INFO] Waiting for confirmation dialog to appear...
+[2026-08-30T08:36:59.126Z] [SUCCESS] ✓ Confirmation dialog detected
+[2026-08-30T08:36:59.126Z] [INFO] 📋 [2026-08-30T08:36:59.126Z] ACTION: Confirmation dialog found | waitTime=1
+[2026-08-30T08:36:59.126Z] ACTION: Confirmation dialog found | waitTime=1
+[2026-08-30T08:36:59.215Z] [INFO] Screenshot saved: screenshots/10-confirmation-dialog-visible.png
+[2026-08-30T08:36:59.215Z] [INFO] Attempting to locate 'Yes' button...
+[2026-08-30T08:36:59.224Z] [INFO] Trying to find Yes button by text content search...
+[2026-08-30T08:36:59.234Z] [INFO] Trying modal-specific button search...
+[2026-08-30T08:36:59.254Z] [SUCCESS] ✓ Yes button clicked via modal search (text: "Yes")
+[2026-08-30T08:36:59.255Z] [INFO] 📋 [2026-08-30T08:36:59.255Z] ACTION: Yes button clicked | method=modal_specific_search
+[2026-08-30T08:36:59.255Z] ACTION: Yes button clicked | method=modal_specific_search
+[2026-08-30T08:36:59.255Z] [SUCCESS] ✓ Yes button clicked successfully (modal_specific_search)
+[2026-08-30T08:36:59.255Z] [INFO] 📋 [2026-08-30T08:36:59.255Z] ACTION: Confirmation Yes button clicked | method=modal_specific_search
+[2026-08-30T08:36:59.255Z] ACTION: Confirmation Yes button clicked | method=modal_specific_search
+[2026-08-30T08:36:59.349Z] [INFO] Screenshot saved: screenshots/11-yes-button-clicked.png
+[2026-08-30T08:36:59.349Z] [INFO] Waiting for page to update after Yes button click...
+[2026-08-30T08:37:04.419Z] [INFO] Screenshot saved: screenshots/12-after-yes-button.png
+[2026-08-30T08:37:04.419Z] [SUCCESS] ✓ Confirmation dialog handled successfully
+[2026-08-30T08:37:04.419Z] [SUCCESS] ✓ [2026-08-30T08:37:04.419Z] DECISION: Confirmation Dialog | Options=[yes_clicked] | Selected=success
+[2026-08-30T08:37:04.419Z] DECISION: Confirmation Dialog | Options=[yes_clicked] | Selected=success
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  PHASE 4: FILL PILGRIM DETAILS (3 PERSONS)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[2026-08-30T08:37:05.422Z] [INFO] Waiting for pilgrim details form to load...
+[2026-08-30T08:37:07.426Z] [WARN] ⚠️  Pilgrim form not found on current page
+[2026-08-30T08:37:07.427Z] [ERROR] ❌ [2026-08-30T08:37:07.427Z] ERROR: Pilgrim form not detected | selector=input[id="fName1"]
+[2026-08-30T08:37:07.427Z] ERROR: Pilgrim form not detected | selector=input[id="fName1"]
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  PERSON 1/3: Filling Mk Pramod
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[2026-08-30T08:37:07.427Z] [INFO] Filling name for Person 1...
+[2026-08-30T08:37:07.431Z] [ERROR] ❌ [2026-08-30T08:37:07.431Z] ERROR: Name field not found for person 1 | fieldId=fName1
+[2026-08-30T08:37:07.431Z] ERROR: Name field not found for person 1 | fieldId=fName1
+[2026-08-30T08:37:07.432Z] [WARN] ⚠️  Name field (fName1) not found - skipping
+[2026-08-30T08:37:07.933Z] [INFO] Filling age for Person 1...
+[2026-08-30T08:37:07.937Z] [ERROR] ❌ [2026-08-30T08:37:07.937Z] ERROR: Age field not found for person 1 | fieldName=age1
+[2026-08-30T08:37:07.937Z] ERROR: Age field not found for person 1 | fieldName=age1
+[2026-08-30T08:37:07.937Z] [WARN] ⚠️  Age field (age1) not found - skipping
+[2026-08-30T08:37:08.438Z] [INFO] Selecting gender for Person 1...
+[2026-08-30T08:37:08.441Z] [ERROR] ❌ [2026-08-30T08:37:08.441Z] ERROR: Gender select not found for person 1 | fieldName=gender1
+[2026-08-30T08:37:08.441Z] ERROR: Gender select not found for person 1 | fieldName=gender1
+[2026-08-30T08:37:08.441Z] [WARN] ⚠️  Gender select (gender1) not found - skipping
+[2026-08-30T08:37:08.942Z] [INFO] Selecting ID Proof Type for Person 1...
+[2026-08-30T08:37:08.946Z] [ERROR] ❌ [2026-08-30T08:37:08.946Z] ERROR: ID Proof Type select not found for person 1 | fieldName=proofS1
+[2026-08-30T08:37:08.946Z] ERROR: ID Proof Type select not found for person 1 | fieldName=proofS1
+[2026-08-30T08:37:08.946Z] [WARN] ⚠️  ID Proof Type select (proofS1) not found - skipping
+[2026-08-30T08:37:09.448Z] [INFO] Filling ID Proof Number for Person 1...
+[2026-08-30T08:37:09.452Z] [ERROR] ❌ [2026-08-30T08:37:09.452Z] ERROR: ID Proof Number field not found for person 1 | fieldId=proofId1
+[2026-08-30T08:37:09.452Z] ERROR: ID Proof Number field not found for person 1 | fieldId=proofId1
+[2026-08-30T08:37:09.453Z] [WARN] ⚠️  ID Proof Number field (proofId1) not found - skipping
+[2026-08-30T08:37:10.073Z] [INFO] Screenshot saved: screenshots/13-person-1-filled.png
+[2026-08-30T08:37:10.073Z] [SUCCESS] ✓ Person 1 details completed
+[2026-08-30T08:37:10.074Z] [SUCCESS] ✓ [2026-08-30T08:37:10.074Z] DECISION: Person 1 Form | Options=[filled] | Selected=success
+[2026-08-30T08:37:10.074Z] DECISION: Person 1 Form | Options=[filled] | Selected=success
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  PERSON 2/3: Filling Abhilash Pramod
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[2026-08-30T08:37:11.076Z] [INFO] Filling name for Person 2...
+[2026-08-30T08:37:11.080Z] [ERROR] ❌ [2026-08-30T08:37:11.080Z] ERROR: Name field not found for person 2 | fieldId=fName2
+[2026-08-30T08:37:11.080Z] ERROR: Name field not found for person 2 | fieldId=fName2
+[2026-08-30T08:37:11.081Z] [WARN] ⚠️  Name field (fName2) not found - skipping
+[2026-08-30T08:37:11.583Z] [INFO] Filling age for Person 2...
+[2026-08-30T08:37:11.586Z] [ERROR] ❌ [2026-08-30T08:37:11.586Z] ERROR: Age field not found for person 2 | fieldName=age2
+[2026-08-30T08:37:11.586Z] ERROR: Age field not found for person 2 | fieldName=age2
+[2026-08-30T08:37:11.587Z] [WARN] ⚠️  Age field (age2) not found - skipping
+[2026-08-30T08:37:12.088Z] [INFO] Selecting gender for Person 2...
+[2026-08-30T08:37:12.092Z] [ERROR] ❌ [2026-08-30T08:37:12.092Z] ERROR: Gender select not found for person 2 | fieldName=gender2
+[2026-08-30T08:37:12.092Z] ERROR: Gender select not found for person 2 | fieldName=gender2
+[2026-08-30T08:37:12.092Z] [WARN] ⚠️  Gender select (gender2) not found - skipping
+[2026-08-30T08:37:12.593Z] [INFO] Selecting ID Proof Type for Person 2...
+[2026-08-30T08:37:12.596Z] [ERROR] ❌ [2026-08-30T08:37:12.596Z] ERROR: ID Proof Type select not found for person 2 | fieldName=proofS2
+[2026-08-30T08:37:12.596Z] ERROR: ID Proof Type select not found for person 2 | fieldName=proofS2
+[2026-08-30T08:37:12.596Z] [WARN] ⚠️  ID Proof Type select (proofS2) not found - skipping
+[2026-08-30T08:37:13.098Z] [INFO] Filling ID Proof Number for Person 2...
+[2026-08-30T08:37:13.102Z] [ERROR] ❌ [2026-08-30T08:37:13.102Z] ERROR: ID Proof Number field not found for person 2 | fieldId=proofId2
+[2026-08-30T08:37:13.102Z] ERROR: ID Proof Number field not found for person 2 | fieldId=proofId2
+[2026-08-30T08:37:13.102Z] [WARN] ⚠️  ID Proof Number field (proofId2) not found - skipping
+[2026-08-30T08:37:13.653Z] [INFO] Screenshot saved: screenshots/13-person-2-filled.png
+[2026-08-30T08:37:13.654Z] [SUCCESS] ✓ Person 2 details completed
+[2026-08-30T08:37:13.654Z] [SUCCESS] ✓ [2026-08-30T08:37:13.654Z] DECISION: Person 2 Form | Options=[filled] | Selected=success
+[2026-08-30T08:37:13.654Z] DECISION: Person 2 Form | Options=[filled] | Selected=success
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  PERSON 3/3: Filling Sharanya P
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[2026-08-30T08:37:14.656Z] [INFO] Filling name for Person 3...
+[2026-08-30T08:37:14.659Z] [ERROR] ❌ [2026-08-30T08:37:14.659Z] ERROR: Name field not found for person 3 | fieldId=fName3
+[2026-08-30T08:37:14.659Z] ERROR: Name field not found for person 3 | fieldId=fName3
+[2026-08-30T08:37:14.660Z] [WARN] ⚠️  Name field (fName3) not found - skipping
+[2026-08-30T08:37:15.161Z] [INFO] Filling age for Person 3...
+[2026-08-30T08:37:15.165Z] [ERROR] ❌ [2026-08-30T08:37:15.165Z] ERROR: Age field not found for person 3 | fieldName=age3
+[2026-08-30T08:37:15.165Z] ERROR: Age field not found for person 3 | fieldName=age3
+[2026-08-30T08:37:15.165Z] [WARN] ⚠️  Age field (age3) not found - skipping
+[2026-08-30T08:37:15.667Z] [INFO] Selecting gender for Person 3...
+[2026-08-30T08:37:15.669Z] [ERROR] ❌ [2026-08-30T08:37:15.669Z] ERROR: Gender select not found for person 3 | fieldName=gender3
+[2026-08-30T08:37:15.669Z] ERROR: Gender select not found for person 3 | fieldName=gender3
+[2026-08-30T08:37:15.669Z] [WARN] ⚠️  Gender select (gender3) not found - skipping
+[2026-08-30T08:37:16.170Z] [INFO] Selecting ID Proof Type for Person 3...
+[2026-08-30T08:37:16.174Z] [ERROR] ❌ [2026-08-30T08:37:16.174Z] ERROR: ID Proof Type select not found for person 3 | fieldName=proofS3
+[2026-08-30T08:37:16.174Z] ERROR: ID Proof Type select not found for person 3 | fieldName=proofS3
+[2026-08-30T08:37:16.174Z] [WARN] ⚠️  ID Proof Type select (proofS3) not found - skipping
+[2026-08-30T08:37:16.676Z] [INFO] Filling ID Proof Number for Person 3...
+[2026-08-30T08:37:16.679Z] [ERROR] ❌ [2026-08-30T08:37:16.679Z] ERROR: ID Proof Number field not found for person 3 | fieldId=proofId3
+[2026-08-30T08:37:16.679Z] ERROR: ID Proof Number field not found for person 3 | fieldId=proofId3
+[2026-08-30T08:37:16.680Z] [WARN] ⚠️  ID Proof Number field (proofId3) not found - skipping
+[2026-08-30T08:37:17.232Z] [INFO] Screenshot saved: screenshots/13-person-3-filled.png
+[2026-08-30T08:37:17.232Z] [SUCCESS] ✓ Person 3 details completed
+[2026-08-30T08:37:17.232Z] [SUCCESS] ✓ [2026-08-30T08:37:17.232Z] DECISION: Person 3 Form | Options=[filled] | Selected=success
+[2026-08-30T08:37:17.232Z] DECISION: Person 3 Form | Options=[filled] | Selected=success
+[2026-08-30T08:37:18.233Z] [SUCCESS] ✓ All pilgrim details filled successfully!
+[2026-08-30T08:37:18.233Z] [SUCCESS] ✓ [2026-08-30T08:37:18.233Z] DECISION: Pilgrim Form Completion | Options=[all_persons_filled] | Selected=success
+[2026-08-30T08:37:18.233Z] DECISION: Pilgrim Form Completion | Options=[all_persons_filled] | Selected=success
+[2026-08-30T08:37:18.279Z] [INFO] Screenshot saved: screenshots/14-all-pilgrims-filled.png
+[2026-08-30T08:37:18.279Z] [SUCCESS] ✓ Automation completed for pilgrim details
+[2026-08-30T08:37:18.279Z] [SUCCESS] ✓ Automation reached next phase
+[2026-08-30T08:37:18.279Z] [INFO] Current URL after pilgrim details: https://tirupatibalaji.ap.gov.in/#/darshanHistory
+[2026-08-30T08:37:18.280Z] [INFO] Waiting for next instructions (Continue/Submit button).
+[2026-08-30T08:37:18.280Z] [INFO] runFullFlow completed. Browser is OPEN for manual steps.
+[2026-08-30T08:37:18.280Z] [SUCCESS] ✓ Complete automation flow executed successfully!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ✅ BROWSER IS READY FOR MANUAL BOOKING
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[2026-08-30T08:37:18.280Z] [WARN] 
+⏸️  IMPORTANT: Browser window is still OPEN
+[2026-08-30T08:37:18.280Z] [WARN] Complete your booking manually, then close the browser to exit the script.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Press ENTER after you're done with manual booking to close browser and exit
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Hint: Press ENTER to exit
+[1G[0JEnter value: [14G
